@@ -3,3 +3,13 @@
   font-weight: 400;
   font-style: normal;
 }
+.kosugi-maru-bold {
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+blue-link{
+  color:blue
+  font-weight: bold;
+  text-decoration: none;
+}
