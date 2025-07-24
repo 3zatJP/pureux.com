@@ -1,5 +1,5 @@
-# checktrash.github.io
-##about cheaktrash.
+# checktrash.github.io<br>
+##about cheaktrash.<br>
 このアプリは茨城県内でどこの市町村のゴミ出しの日でも確認することができるアプリにする予定です（2025/07/16現在）
-リリースは2026年３月に正式リリースするのを目標としている
+リリースは2026年３月に正式リリースするのを目標としている<br>
 サイトは基本HTMLとCSSで書かれており、JSは基本使っていません。
