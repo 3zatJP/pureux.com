@@ -1,0 +1,44 @@
+/* ja/index.html 専用スタイル */
+body {
+    background: #f4f7fb;
+}
+
+header {
+    border-bottom: 2px solid #e0e0e0;
+}
+
+header h1 {
+    color: #009688;
+    font-size: 2.4rem;
+}
+
+header ul li a {
+    color: #009688;
+}
+
+header ul li a:hover {
+    color: #00695c;
+}
+
+main {
+    background: #f9f9ff;
+    border: 1px solid #e0e0e0;
+}
+
+.download-bt {
+    background: #009688;
+    color: #fff;
+}
+
+.download-bt:hover {
+    background: #00695c;
+}
+
+footer {
+    background: #e0f2f1;
+    color: #555;
+}
+red-b {
+    color: hsl(0, 65%, 51%);
+    font-weight: bold;
+}
