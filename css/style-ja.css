@@ -1,24 +1,21 @@
-/* ja/index.html 専用スタイル */
-body {
-    background: #f4f7fb;
-}
-
+/* Apple風ヘッダーと競合するheader系スタイルを削除 */
+/* 削除対象:
 header {
     border-bottom: 2px solid #e0e0e0;
 }
-
 header h1 {
     color: #009688;
     font-size: 2.4rem;
 }
-
 header ul li a {
     color: #009688;
 }
-
 header ul li a:hover {
     color: #00695c;
 }
+*/
+
+/* それ以外のmain, .download-bt, footerなどはそのまま */
 
 main {
     background: #f9f9ff;

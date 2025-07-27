@@ -6,25 +6,24 @@ body {
     padding: 0;
 }
 
+/* --- 旧デザインのheader系スタイルを削除 --- */
+/* 削除対象:
 header {
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     padding: 24px 0 12px 0;
     text-align: center;
 }
-
 .mainlogo {
     width: 80px;
     height: auto;
     margin-bottom: 8px;
 }
-
 header h1 {
     font-size: 2.2rem;
     margin: 0 0 8px 0;
     letter-spacing: 2px;
 }
-
 header ul {
     list-style: none;
     padding: 0;
@@ -33,7 +32,6 @@ header ul {
     justify-content: center;
     gap: 24px;
 }
-
 header ul li a {
     text-decoration: none;
     color: #00796b;
@@ -41,10 +39,12 @@ header ul li a {
     font-size: 1.1rem;
     transition: color 0.2s;
 }
-
 header ul li a:hover {
     color: #004d40;
 }
+*/
+
+/* --- Apple風ヘッダーのスタイルはそのまま --- */
 
 main {
     max-width: 700px;
@@ -286,10 +286,10 @@ footer {
 }
 
 /* Apple風ナビゲーションバー：ロゴ左・メニュー中央 */
+/* PC画面でも比率が特殊な場合に対応 */
 .apple-nav {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  min-width: 0;
+  overflow: visible;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -298,14 +298,42 @@ footer {
   min-height: 64px;
   position: relative;
   z-index: 100;
+  gap: 0;
 }
 .nav-logo {
-  position: absolute;
-  left: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0;
-  z-index: 2;
+  flex-shrink: 0;
+  min-width: 44px;
+  max-width: 80px;
+  margin-right: 24px;
+}
+.nav-menu {
+  flex-shrink: 0;
+  min-width: 0;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 0;
+  gap: 32px;
+}
+.nav-toggle {
+  flex-shrink: 0;
+  min-width: 40px;
+  max-width: 60px;
+  margin-left: 24px;
+}
+@media (min-width: 901px) {
+  .nav-toggle {
+    display: none !important;
+  }
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    gap: 32px;
+    width: auto;
+  }
 }
 .nav-logo img {
   height: 36px;
@@ -341,12 +369,18 @@ footer {
   transition: width 0.2s;
   position: absolute;
   left: 0; bottom: 0;
+  z-index: 0;
 }
 .nav-menu > li > a:hover::after {
   width: 100%;
 }
 .nav-menu > li > a:hover {
-  color: #3BAF92;
+  color: #00796b !important;
+  background: transparent !important;
+}
+.nav-menu > li > a::after {
+  background: rgba(59,175,146,0.7);
+  height: 2px;
 }
 /* サブメニュー */
 .nav-menu .has-submenu:hover .submenu {
@@ -391,19 +425,96 @@ footer {
   color: #222;
   letter-spacing: 1px;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .apple-nav {
-    padding: 0 10px;
+    flex-direction: row;
     min-height: 56px;
+    padding: 0 10px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
   }
   .nav-logo {
-    left: 10px;
+    order: 1;
+    min-width: 44px;
+    flex-basis: 44px;
+    margin: 0;
   }
   .nav-menu {
-    gap: 16px;
-    font-size: 0.98rem;
+    order: 2;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 0 0 12px 12px;
+    padding: 16px 0 8px 0;
+    margin: 0;
+    display: none;
+    z-index: 1099;
+    width: 100vw;
+    min-width: 0;
   }
-  .header-title h1 {
-    font-size: 1.1rem;
+  .nav-menu.open {
+    display: flex;
+    animation: fadeInMenu 0.3s;
   }
+  .nav-toggle {
+    order: 3;
+    display: flex !important;
+    min-width: 40px;
+    flex-basis: 40px;
+    margin: 0;
+    z-index: 2000 !important;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    position: static;
+  }
+  .nav-toggle span {
+    background: #222 !important;
+  }
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ハンバーガーメニュー */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+  margin-left: 8px;
+}
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 4px 0;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+/* 開閉時のアニメーション */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }

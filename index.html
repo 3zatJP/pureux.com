@@ -18,7 +18,10 @@
     <header>
         <nav class="apple-nav">
             <a href="/" class="nav-logo"><img src="/image/Logo.png" alt="pureUX Logo"></a>
-            <ul class="nav-menu">
+            <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="/ja/about-us/about-us.html">pureUXについて</a></li>
                 <li><a href="#ai-plan">AIプラン</a></li>
                 <li><a href="/ja/business/index.html">ビジネス向け</a></li>
@@ -35,7 +38,7 @@
             <h2>作成理由</h2>
             <p>（ここにアプリ作成の背景や目的を記載できます）</p>
         </section>
-        <section id="business">
+        <section id="subscription">
             <h2>サブスクリプションの種類と内容</h2>
             <ul>
                 <li>Check AI</li>

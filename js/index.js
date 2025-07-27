@@ -70,3 +70,25 @@ window.addEventListener('load', function() {
     }, 600);
   }
 });
+
+// ハンバーガーメニュー開閉
+window.addEventListener('DOMContentLoaded', function() {
+  var navToggle = document.querySelector('.nav-toggle');
+  var navMenu = document.getElementById('nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      var expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navToggle.classList.toggle('active');
+      navMenu.classList.toggle('open');
+    });
+    // メニュー内リンククリックで自動的に閉じる
+    navMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.setAttribute('aria-expanded', false);
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('open');
+      });
+    });
+  }
+});
