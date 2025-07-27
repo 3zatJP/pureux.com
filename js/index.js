@@ -1,17 +1,14 @@
 
-// サブメニューのアニメーション表示
+// サブメニュー用コード（現状HTMLには未使用）
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const submenuParent = document.querySelector('.has-submenu');
     const submenu = document.querySelector('.submenu');
     if (!submenuParent || !submenu) return;
-
-    // 初期状態
     submenu.style.display = 'none';
     submenu.style.opacity = 0;
     submenu.style.transform = 'translateY(-10px)';
     submenu.style.transition = 'opacity 0.3s, transform 0.3s';
-
-    // マウスが乗ったとき
     submenuParent.addEventListener('mouseenter', function() {
         submenu.style.display = 'block';
         setTimeout(function() {
@@ -19,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
             submenu.style.transform = 'translateY(0)';
         }, 10);
     });
-
-    // マウスが離れたとき
     submenuParent.addEventListener('mouseleave', function() {
         submenu.style.opacity = 0;
         submenu.style.transform = 'translateY(-10px)';
@@ -28,4 +23,50 @@ document.addEventListener('DOMContentLoaded', function() {
             submenu.style.display = 'none';
         }, 300);
     });
+});
+*/
+
+// ページ内スクロール（アンカーリンク）
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').replace('#','');
+      const target = document.getElementById(targetId) || document.querySelector(`[id='${targetId}']`);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 40,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // フィードバックリンクのクリック時にアニメーション
+  const feedbackLink = document.querySelector('.feedback-link');
+  if (feedbackLink) {
+    feedbackLink.addEventListener('click', function() {
+      feedbackLink.style.background = '#fffde7';
+      setTimeout(() => {
+        feedbackLink.style.background = '';
+      }, 300);
+    });
+  }
+});
+
+// ローディングアニメーション
+window.addEventListener('DOMContentLoaded', function() {
+  var loader = document.getElementById('loader');
+  if (loader) {
+    loader.innerHTML = '<div class="spinner"></div>';
+  }
+});
+window.addEventListener('load', function() {
+  var loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.add('hide');
+    setTimeout(function() {
+      loader.style.display = 'none';
+    }, 600);
+  }
 });

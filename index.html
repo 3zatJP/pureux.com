@@ -1,70 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="pureUX Developent Team">
-        <meta name="robots" content="nofollow">
-        <title>Check Trash。どこでも見れるゴミ分別アプリ。</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/style-ja.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <img src="/image/Logo.png" alt="pureUX Logo" class="mainlogo">
-            <h1>Check Trash-いつでもどこでもごみの日が分かる</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="pureUX Development Team">
+    <meta name="robots" content="nofollow">
+    <title>Check Trash。どこでも見れるゴミ分別アプリ。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-ja.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <script src="/js/index.js" defer></script>
+</head>
+<body>
+    <div id="loader"></div>
+    <header>
+        <img src="/image/Logo.png" alt="pureUX Logo" class="mainlogo">
+        <h1>Check Trash - いつでもどこでもごみの日が分かる</h1>
+        <nav>
             <ul>
                 <li><a href="/ja/index.html">ホーム</a></li>
                 <li><a href="#create">作成理由</a></li>
                 <li><a href="#business">サブスクリプション</a></li>
                 <li><a href="#team-betaprogram">Beta Program登録</a></li>
-                 <li><a href="#feedback">フィードバック（アプリ）</a></li>
+                <li><a href="#feedback">フィードバック（アプリ）</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
-                <il>
-                    <ul>
-                        <li><a href="ja\about-us\about-us.html">pureUX、私たちについて。</a></li>
+                <li class="has-submenu">
+                    <a href="#about-us">その他</a>
+                    <ul class="submenu">
+                        <li><a href="/ja/about-us/about-us.html">pureUX、私たちについて。</a></li>
                     </ul>
-                </il>
+                </li>
             </ul>
-        </header>
-        <main>
-            <section id="create">
-                
-            </section>
-            <section id="business">
-                <h2>サブスクリプションの種類と内容</h2>
-                <ul>
-                    <li class="subri-">Chek AI</li>
-                    <li>Webサービス・アプリのUI/UXコンサルティング</li>
-                    <li>自治体・企業向けITソリューションの提供</li>
-                </ul>
-            </section>
-            <section id="#team-betaprogram">
-                <h2>Beta Program登録</h2>
-                <p>Check Trashのベータ版に参加して、最新機能をいち早く体験し、フィードバックを提供してください。<br><b class="red-b">このバージョンにはバグが含まれる場合があります。</b>このサイトの下にあります、フィードバックを送信するというリンクからフィードバックをお願いします。</p>
-                <ul>
-                    <li>登録方法:特になし（Android版はGithubから、iOS版はTest Flightからのインストールすることできます。）</li>
-                    <li>参加条件: 特になし。どなたでもご参加いただけます。</li>
-                    <li>フィードバック方法: アプリ内のフィードバックフォームから、または<a href="#feedback">こちら</a>から送信してください。</li>
-                </ul>
-            </section>
-            <div class="feedback" id="feedback">
-                <h2>フィードバック</h2>
-                <p>アプリの使用感、バグの発見や改善点についてのフィードバックをお待ちしています。<br>以下のリンクからフィードバックフォームにアクセスしてください。</p>
-                <a href=https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header class="feedback-link">フィードバックフォームへ（Googleフォーム）</a>またはアプリのフィードバックフォームから送信してください。</p>
-            </div>
-            <section>
-                <h2>ダウンロード</h2>
-                <p><a href="ja\download\index" class=".download-bt">こちらからダウンロードできます。</a><br>開発中</p>
-                <p><rb>2026年3月正式リリース予定（Android版）</rb></p>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2025 pureUX株式会社. All rights reserved.</p>
-            <p>画像の提供元：sioyakitori</p>
-        </footer>
-  </body>
+        </nav>
+    </header>
+    <main>
+        <section id="create">
+            <h2>作成理由</h2>
+            <p>（ここにアプリ作成の背景や目的を記載できます）</p>
+        </section>
+        <section id="business">
+            <h2>サブスクリプションの種類と内容</h2>
+            <ul>
+                <li>Check AI</li>
+                <li>Webサービス・アプリのUI/UXコンサルティング</li>
+                <li>自治体・企業向けITソリューションの提供</li>
+            </ul>
+        </section>
+        <section id="team-betaprogram">
+            <h2>Beta Program登録</h2>
+            <p>Check Trashのベータ版に参加して、最新機能をいち早く体験し、フィードバックを提供してください。<br><b class="red-b">このバージョンにはバグが含まれる場合があります。</b>このサイトの下にあります、フィードバックを送信するというリンクからフィードバックをお願いします。</p>
+            <ul>
+                <li>登録方法: 特になし（Android版はGithubから、iOS版はTest Flightからインストールできます。）</li>
+                <li>参加条件: 特になし。どなたでもご参加いただけます。</li>
+                <li>フィードバック方法: アプリ内のフィードバックフォームから、または<a href="#feedback">こちら</a>から送信してください。</li>
+            </ul>
+        </section>
+        <div class="feedback" id="feedback">
+            <h2>フィードバック</h2>
+            <p>アプリの使用感、バグの発見や改善点についてのフィードバックをお待ちしています。<br>以下のリンクからフィードバックフォームにアクセスしてください。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" class="feedback-link" target="_blank" rel="noopener">フィードバックフォームへ（Googleフォーム）</a>またはアプリのフィードバックフォームから送信してください。
+        </div>
+        <section id="download">
+            <h2>ダウンロード</h2>
+            <p><a href="/ja/download/index.html" class="download-bt">こちらからダウンロードできます。</a><br>開発中</p>
+            <p><span>2026年3月正式リリース予定（Android版）</span></p>
+        </section>
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>ご質問・ご要望は<a href="mailto:info@pureux.jp">info@pureux.jp</a>までご連絡ください。</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 pureUX株式会社. All rights reserved.</p>
+        <p>画像の提供元：sioyakitori</p>
+    </footer>
+</body>
 </html>
