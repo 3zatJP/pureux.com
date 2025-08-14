@@ -6,23 +6,32 @@
         <meta name="robots" content="nofollow">
         <title>pureUX。私たちについて</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/style-ja.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/style-ja.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+        <script src="../../js/index.js" defer></script>
     </head>
     <body>
+        <div id="loader"></div>
         <header>
-            <img src="/image/Logo.png" alt="pureUX Logo" class="mainlogo">
-            <h1>pureUX</h1>
-            <ul>
-                <li><a href="/ja/index.html">ホーム</a></li>
-                <li><a href="#philosophy">活動理念</a></li>
-                <li><a href="#business">事業内容</a></li>
-                <li><a href="#team">チームメンバー紹介</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
+            <nav class="apple-nav">
+                <a href="../../" class="nav-logo"><img src="../../image/Logo.png" alt="pureUX Logo"></a>
+                <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../../index.html">ホーム</a></li>
+                    <li><a href="#philosophy">活動理念</a></li>
+                    <li><a href="#business">事業内容</a></li>
+                    <li><a href="#team">チームメンバー紹介</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-title">
+                <h1>pureUX - 私たちについて</h1>
+            </div>
         </header>
         <main>
             <section id="philosophy">
@@ -47,10 +56,14 @@
                     <li>サポーターCSO：Yuyuyu</li>
                 </ul>
             </section>
+            <section id="contact">
+                <h2>お問い合わせ</h2>
+                <p>ご質問・ご要望は<a href="mailto:info@pureux.jp">info@pureux.jp</a>までご連絡ください。</p>
+            </section>
         </main>
         <footer>
             <p>&copy; 2025 pureUX株式会社. All rights reserved.</p>
             <p>画像の提供元：sioyakitori</p>
         </footer>
-  </body>
+    </body>
 </html>

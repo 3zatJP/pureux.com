@@ -1,5 +1,16 @@
 /* 日本語版専用スタイル */
 
+/* ヘッダー内のナビゲーション（日本語版専用） */
+header ul li a {
+    color: #00796b;
+    font-weight: 600;
+}
+
+header ul li a:hover {
+    color: #004d40;
+    background: #e8f5e8;
+}
+
 /* メインコンテンツの日本語版カスタマイズ */
 main {
     background: #f9f9ff;

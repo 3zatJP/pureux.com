@@ -45,7 +45,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0 32px;
     min-height: 64px;
     position: relative;
@@ -53,6 +53,7 @@ body {
     gap: 0;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
 }
 
 .nav-logo {
@@ -60,10 +61,11 @@ body {
     min-width: 44px;
     max-width: 80px;
     margin-right: 24px;
+    align-self: flex-start;
 }
 
 .nav-logo img {
-    height: 36px;
+    height: 48px;
     width: auto;
     display: block;
 }
@@ -161,6 +163,110 @@ body {
     font-size: 1.6rem;
     font-weight: 600;
     margin: 0;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+/* ヘッダー全体のスタイル */
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+}
+
+/* ヘッダー内のナビゲーション（ul、liタグ）のスタイル */
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+header ul li {
+    position: relative;
+}
+
+header ul li a {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    display: block;
+    transition: all 0.2s;
+    border-radius: 8px;
+}
+
+header ul li a:hover {
+    color: #00796b;
+    background: #e0f2f1;
+}
+
+/* サブメニューのスタイル */
+header ul li.has-submenu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    min-width: 220px;
+    z-index: 10;
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+header ul li.has-submenu:hover .submenu,
+header ul li.has-submenu:focus-within .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header ul li.has-submenu .submenu li {
+    padding: 0;
+}
+
+header ul li.has-submenu .submenu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #222;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.2s;
+    border-radius: 0;
+}
+
+header ul li.has-submenu .submenu li a:hover {
+    background: #e0f2f1;
+    color: #00796b;
+}
+
+/* ヘッダー内のロゴ画像 */
+header img.mainlogo {
+    height: 48px;
+    width: auto;
+    display: block;
+    margin: 0 0 16px 0;
+    align-self: flex-start;
+}
+
+/* ヘッダー内のタイトル */
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 16px 0;
     color: #222;
     letter-spacing: 1px;
 }
@@ -283,20 +389,41 @@ footer {
 
 /* レスポンシブデザイン */
 @media (max-width: 900px) {
+    /* ヘッダー内のナビゲーション（モバイル対応） */
+    header {
+        padding: 12px 16px;
+    }
+    
+    header ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px 0;
+        width: 100%;
+    }
+    
+    header ul li a {
+        padding: 12px 20px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
     .apple-nav {
         flex-direction: row;
         min-height: 56px;
-        padding: 0 10px;
+        padding: 0 16px;
         position: relative;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+        width: 100%;
     }
     
     .nav-logo {
         order: 1;
         min-width: 44px;
         flex-basis: 44px;
-        margin: 0;
+        margin: 0 16px 0 0;
+        align-self: flex-start;
     }
     
     .nav-menu {
@@ -329,7 +456,7 @@ footer {
         display: flex !important;
         min-width: 40px;
         flex-basis: 40px;
-        margin: 0;
+        margin: 0 0 0 auto;
         z-index: 2000 !important;
         width: 40px;
         height: 40px;
@@ -366,6 +493,34 @@ footer {
 }
 
 @media (max-width: 600px) {
+    /* ヘッダー内のナビゲーション（小画面対応） */
+    header {
+        padding: 8px 12px;
+    }
+    
+    header ul {
+        gap: 12px;
+        padding: 12px 0;
+    }
+    
+    header ul li a {
+        padding: 10px 16px;
+        font-size: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.4rem;
+        margin: 12px 0;
+    }
+    
+    .apple-nav {
+        padding: 0 12px;
+    }
+    
+    .nav-logo {
+        margin: 0 12px 0 0;
+    }
+    
     main {
         margin: 16px;
         padding: 20px 16px;

@@ -6,99 +6,42 @@
         <meta name="robots" content="nofollow">
         <title>Check Trash。どこでも見れるゴミ分別アプリ。</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/style-ja.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/style-ja.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+        <script src="../../js/index.js" defer></script>
     </head>
     <body>
+        <div id="loader"></div>
         <header>
-            <img src="/image/Logo.png" alt="pureUX Logo" class="mainlogo">
-            <h1>Check Trash-いつでもどこでもごみの日が分かる</h1>
-            <nav>
-                <ul class="nav-main">
-                    <li><a href="/ja/index.html">ホーム</a></li>
+            <nav class="apple-nav">
+                <a href="../../" class="nav-logo"><img src="../../image/Logo.png" alt="pureUX Logo"></a>
+                <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../../index.html">ホーム</a></li>
                     <li><a href="#device-click">作成理由</a></li>
                     <li><a href="#team-betaprogram">Beta Program登録</a></li>
                     <li><a href="#feedback">フィードバック（アプリ）</a></li>
                     <li class="has-submenu">
                         <a href="#">このページ外の内容 ▼</a>
                         <ul class="submenu">
-                            <li><a href="/ja/about-us/about-us.html">pureUX、私たちについて。</a></li>
-                            <li><a href="/">アップデート内容（リリースノート）</a></li>
-                            <li><a href="/ja/download/index">Check Trashのダウンロード</a></li>
-                            <li><a href="/ja/download/ai.html">Chek AIの概要とサブスクリプション</a></li>
+                            <li><a href="../about-us/about-us.html">pureUX、私たちについて。</a></li>
+                            <li><a href="../../index.html">アップデート内容（リリースノート）</a></li>
+                            <li><a href="index.html">Check Trashのダウンロード</a></li>
+                            <li><a href="ai.html">Chek AIの概要とサブスクリプション</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
+            <div class="header-title">
+                <h1>Check Trash - いつでもどこでもごみの日が分かる</h1>
+            </div>
         </header>
-        <mein>
-</mein>
-
-</mein>
-<style>
-/* ドロップダウンメニューのCSS */
-.nav-main {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 24px;
-}
-.nav-main > li {
-    position: relative;
-}
-.nav-main > li > a {
-    text-decoration: none;
-    color: #00796b;
-    font-weight: bold;
-    font-size: 1.1rem;
-    padding: 8px 16px;
-    display: block;
-    transition: background 0.2s;
-}
-.nav-main > li > a:hover {
-    background: #e0f2f1;
-    border-radius: 8px;
-}
-.has-submenu .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border-radius: 8px;
-    min-width: 220px;
-    z-index: 10;
-    padding: 8px 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s, transform 0.2s;
-}
-.has-submenu:hover .submenu,
-.has-submenu:focus-within .submenu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-.submenu li {
-    padding: 0;
-}
-.submenu li a {
-    display: block;
-    padding: 8px 20px;
-    color: #00796b;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background 0.2s;
-}
-.submenu li a:hover {
-    background: #e0f2f1;
-}
-</style>
+        <main>
             <section id="device-click">
                 <h2>Check Trashの端末別　誘導</h2>
                 <h3>私たちはより多くのデバイスに対応したアプリを開発しています</h3>
@@ -107,6 +50,7 @@
                     <li>iOSは<a>こちらから</a><b>（iOS 16以降のみ対応）</b></li>
                 </ul>
                 <p>ここでは、通常版のアプリのみのリンクを張っております</p>
+            </section>
             <section id="team-betaprogram">
                 <h2>Beta Program登録</h2>
                 <p>Check Trashのベータ版に参加して、最新機能をいち早く体験し、フィードバックを提供してください。<br><b class="red-b">このバージョンにはバグが含まれる場合があります。</b>このサイトの下にあります、フィードバックを送信するというリンクからフィードバックをお願いします。</p>
@@ -119,10 +63,16 @@
             <div class="feedback" id="feedback">
                 <h2>フィードバック</h2>
                 <p>アプリの使用感、バグの発見や改善点についてのフィードバックをお待ちしています。<br>以下のリンクからフィードバックフォームにアクセスしてください。</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" class="feedback-link">フィードバックフォームへ（Googleフォーム）</a>またはアプリのフィードバックフォームから送信してください。</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" class="feedback-link">フィードバックフォームへ（Googleフォーム）</a>またはアプリのフィードバックフォームから送信してください。
             </div>
             <section>
                 <h2>ダウンロード（通常版）</h2>
-                <a href="/" class="download-link">Check Trashをダウンロード</a>
+                <a href="../../index.html" class="download-link">Check Trashをダウンロード</a>
             </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 pureUX株式会社. All rights reserved.</p>
+            <p>画像の提供元：sioyakitori</p>
+        </footer>
+    </body>
 </html>
