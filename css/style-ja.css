@@ -1,27 +1,12 @@
-/* Apple風ヘッダーと競合するheader系スタイルを削除 */
-/* 削除対象:
-header {
-    border-bottom: 2px solid #e0e0e0;
-}
-header h1 {
-    color: #009688;
-    font-size: 2.4rem;
-}
-header ul li a {
-    color: #009688;
-}
-header ul li a:hover {
-    color: #00695c;
-}
-*/
+/* 日本語版専用スタイル */
 
-/* それ以外のmain, .download-bt, footerなどはそのまま */
-
+/* メインコンテンツの日本語版カスタマイズ */
 main {
     background: #f9f9ff;
     border: 1px solid #e0e0e0;
 }
 
+/* ダウンロードボタンの日本語版カスタマイズ */
 .download-bt {
     background: #009688;
     color: #fff;
@@ -31,15 +16,19 @@ main {
     background: #00695c;
 }
 
+/* フッターの日本語版カスタマイズ */
 footer {
     background: #e0f2f1;
     color: #555;
 }
-red-b {
+
+/* 日本語版専用のテキストスタイル */
+.red-b {
     color: hsl(0, 65%, 51%);
     font-weight: bold;
 }
-sub-1{
+
+.sub-1 {
     color: #009688;
     font-weight: bold;
 }
