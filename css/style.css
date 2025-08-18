@@ -39,7 +39,7 @@ body {
 }
 
 /* Apple風ナビゲーションバー */
-.apple-nav {
+.navigation-1 {
     min-width: 0;
     overflow: visible;
     display: flex;
@@ -408,7 +408,7 @@ footer {
         box-sizing: border-box;
     }
     
-    .apple-nav {
+    .navigation-1 {
         flex-direction: row;
         min-height: 56px;
         padding: 0 16px;
@@ -513,7 +513,7 @@ footer {
         margin: 12px 0;
     }
     
-    .apple-nav {
+    .navigation-1 {
         padding: 0 12px;
     }
     
