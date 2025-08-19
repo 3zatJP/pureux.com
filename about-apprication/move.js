@@ -48,6 +48,18 @@ window.addEventListener('load', function() {
   }
 });
 
+// Ensure hero reveal triggers animation on load if in view
+window.addEventListener('load', function() {
+  const hero = document.getElementById('product-hero');
+  if (hero) {
+    const rect = hero.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inView) {
+      hero.classList.add('visible');
+    }
+  }
+});
+
 // ハンバーガーメニュー開閉
 window.addEventListener('DOMContentLoaded', function() {
   var navToggle = document.querySelector('.nav-toggle');
