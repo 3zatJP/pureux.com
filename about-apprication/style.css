@@ -192,3 +192,23 @@ footer { text-align: center; padding: 24px 0 12px 0; background: #e0f2f1; color:
 	.split-feature.reverse .split-col:first-child { order: 2; }
 	.split-feature.reverse .split-col:last-child { order: 1; }
 }
+
+/* Hero readability tweaks */
+.hero-dark .hero-content { max-width: 720px; margin: 0 auto; }
+.hero-dark .headline { font-size: 2.4rem; line-height: 1.25; color: #f7fafc; }
+.hero-dark .subhead { font-size: 1.2rem; line-height: 1.8; color: #dfe7eb; }
+.hero-dark .cta-primary { background: #10a58c; }
+.hero-dark .cta-primary:hover { background: #0d8e79; }
+.hero-dark .cta-secondary { color: #cfe7e5; border-color: rgba(207,231,229,0.5); background: rgba(255,255,255,0.06); }
+.hero-dark .cta-secondary:hover { background: rgba(255,255,255,0.12); color: #e7f4f2; }
+
+@media (max-width: 420px) {
+	.hero-dark .headline { font-size: 2rem; }
+	.hero-dark .subhead { font-size: 1.1rem; }
+}
+
+/* Pricing title/badge layout fixes */
+.plan-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.plan-title .badge { display: inline-flex; align-items: center; white-space: normal; line-height: 1.3; }
+.plan-title .badge br { display: none; }
+@media (max-width: 480px) { .plan-title { flex-direction: column; align-items: flex-start; gap: 6px; } }
