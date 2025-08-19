@@ -234,80 +234,22 @@ header ul li.has-submenu:focus-within .submenu {
     transform: translateY(0);
 }
 
-header ul li.has-submenu .submenu li {
-    padding: 0;
-}
-
-header ul li.has-submenu .submenu li a {
-    display: block;
-    padding: 8px 20px;
-    color: #222;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background 0.2s;
-    border-radius: 0;
-}
-
-header ul li.has-submenu .submenu li a:hover {
-    background: #e0f2f1;
-    color: #00796b;
-}
+header ul li.has-submenu .submenu li { padding: 0; }
+header ul li.has-submenu .submenu li a { display: block; padding: 8px 20px; color: #222; text-decoration: none; font-size: 1rem; transition: background 0.2s; border-radius: 0; }
+header ul li.has-submenu .submenu li a:hover { background: #e0f2f1; color: #00796b; }
 
 /* ヘッダー内のロゴ画像 */
-header img.mainlogo {
-    height: 48px;
-    width: auto;
-    display: block;
-    margin: 0 0 16px 0;
-    align-self: flex-start;
-}
+header img.mainlogo { height: 48px; width: auto; display: block; margin: 0 0 16px 0; align-self: flex-start; }
 
 /* ヘッダー内のタイトル */
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin: 16px 0;
-    color: #222;
-    letter-spacing: 1px;
-}
+header h1 { font-size: 1.6rem; font-weight: 600; margin: 16px 0; color: #222; letter-spacing: 1px; }
 
 /* ハンバーガーメニュー */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 110;
-    margin-left: 8px;
-}
-
-.nav-toggle span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    margin: 4px 0;
-    background: #222;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-/* 開閉時のアニメーション */
-.nav-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
+.nav-toggle { display: none; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; background: none; border: none; cursor: pointer; z-index: 110; margin-left: 8px; }
+.nav-toggle span { display: block; width: 26px; height: 3px; margin: 4px 0; background: #222; border-radius: 2px; transition: 0.3s; }
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* メインコンテンツ */
 main {
@@ -319,218 +261,54 @@ main {
     padding: 32px 24px;
 }
 
-section {
-    margin-bottom: 30px;
-}
+section { margin-bottom: 30px; }
 
-h2 {
-    color: #00796b;
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
+h2 { color: #00796b; font-size: 1.5rem; margin-top: 0; margin-bottom: 10px; }
 
-section ul {
-    padding-left: 20px;
-}
-
-section ul li {
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-}
+section ul { padding-left: 20px; }
+section ul li { margin-bottom: 8px; font-size: 1.1rem; }
 
 /* ダウンロードボタン */
-.download-bt {
-    display: inline-block;
-    background: #3BAF92;
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 8px;
-    transition: background 0.2s;
-}
-
-.download-bt:hover {
-    background: #33997F;
-}
+.download-bt { display: inline-block; background: #3BAF92; color: #fff; padding: 10px 24px; border-radius: 24px; text-decoration: none; font-weight: bold; margin-top: 8px; transition: background 0.2s; }
+.download-bt:hover { background: #33997F; }
 
 /* フィードバックセクション */
-.feedback {
-    background: #fff8e1;
-    border-left: 6px solid #ffd54f;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-}
-
-.feedback-link {
-    color: #00796b;
-    font-weight: bold;
-    text-decoration: underline;
-    margin-right: 8px;
-}
-
-.feedback-link:hover {
-    color: #004d40;
-}
+.feedback { background: #fff8e1; border-left: 6px solid #ffd54f; padding: 20px; margin-bottom: 30px; border-radius: 8px; }
+.feedback-link { color: #00796b; font-weight: bold; text-decoration: underline; margin-right: 8px; }
+.feedback-link:hover { color: #004d40; }
 
 /* フッター */
-footer {
-    text-align: center;
-    padding: 24px 0 12px 0;
-    background: #f1f1f1;
-    color: #888;
-    font-size: 0.95rem;
-    margin-top: 40px;
-    border-top: 1px solid #e0e0e0;
-}
+footer { text-align: center; padding: 24px 0 12px 0; background: #f1f1f1; color: #888; font-size: 0.95rem; margin-top: 40px; border-top: 1px solid #e0e0e0; }
 
 /* レスポンシブデザイン */
 @media (max-width: 900px) {
     /* ヘッダー内のナビゲーション（モバイル対応） */
-    header {
-        padding: 12px 16px;
-    }
-    
-    header ul {
-        flex-direction: column;
-        gap: 16px;
-        padding: 16px 0;
-        width: 100%;
-    }
-    
-    header ul li a {
-        padding: 12px 20px;
-        text-align: center;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .navigation-1 {
-        flex-direction: row;
-        min-height: 56px;
-        padding: 0 16px;
-        position: relative;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .nav-logo {
-        order: 1;
-        min-width: 44px;
-        flex-basis: 44px;
-        margin: 0 16px 0 0;
-        align-self: flex-start;
-    }
-    
-    .nav-menu {
-        order: 2;
-        position: fixed;
-        top: 56px;
-        left: 0;
-        right: 0;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        border-radius: 0 0 12px 12px;
-        padding: 16px 0 8px 0;
-        margin: 0;
-        display: none;
-        z-index: 1099;
-        width: 100vw;
-        min-width: 0;
-    }
-    
-    .nav-menu.open {
-        display: flex;
-        animation: fadeInMenu 0.3s;
-    }
-    
-    .nav-toggle {
-        order: 3;
-        display: flex !important;
-        min-width: 40px;
-        flex-basis: 40px;
-        margin: 0 0 0 auto;
-        z-index: 2000 !important;
-        width: 40px;
-        height: 40px;
-        background: none;
-        border: none;
-        position: static;
-    }
-    
-    .nav-toggle span {
-        background: #222 !important;
-    }
-    
-    @keyframes fadeInMenu {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+    header { padding: 12px 16px; }
+    header ul { flex-direction: column; gap: 16px; padding: 16px 0; width: 100%; }
+    header ul li a { padding: 12px 20px; text-align: center; width: 100%; box-sizing: border-box; }
+    .navigation-1 { flex-direction: row; min-height: 56px; padding: 0 16px; position: relative; justify-content: flex-start; align-items: center; width: 100%; }
+    .nav-logo { order: 1; min-width: 44px; flex-basis: 44px; margin: 0 16px 0 0; align-self: flex-start; }
+    .nav-menu { order: 2; position: fixed; top: 56px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: center; gap: 0; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-radius: 0 0 12px 12px; padding: 16px 0 8px 0; margin: 0; display: none; z-index: 1099; width: 100vw; min-width: 0; }
+    .nav-menu.open { display: flex; animation: fadeInMenu 0.3s; }
+    .nav-toggle { order: 3; display: flex !important; min-width: 40px; flex-basis: 40px; margin: 0 0 0 auto; z-index: 2000 !important; width: 40px; height: 40px; background: none; border: none; position: static; }
+    .nav-toggle span { background: #222 !important; }
+    @keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 }
 
 @media (min-width: 901px) {
-    .nav-toggle {
-        display: none !important;
-    }
-    
-    .nav-menu {
-        display: flex !important;
-        position: static;
-        background: none;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 0;
-        gap: 32px;
-        width: auto;
-    }
+    .nav-toggle { display: none !important; }
+    .nav-menu { display: flex !important; position: static; background: none; box-shadow: none; border-radius: 0; padding: 0; gap: 32px; width: auto; }
 }
 
 @media (max-width: 600px) {
     /* ヘッダー内のナビゲーション（小画面対応） */
-    header {
-        padding: 8px 12px;
-    }
-    
-    header ul {
-        gap: 12px;
-        padding: 12px 0;
-    }
-    
-    header ul li a {
-        padding: 10px 16px;
-        font-size: 1rem;
-    }
-    
-    header h1 {
-        font-size: 1.4rem;
-        margin: 12px 0;
-    }
-    
-    .navigation-1 {
-        padding: 0 12px;
-    }
-    
-    .nav-logo {
-        margin: 0 12px 0 0;
-    }
-    
-    main {
-        margin: 16px;
-        padding: 20px 16px;
-    }
-    
-    section {
-        padding: 16px;
-    }
-    
-    .header-title h1 {
-        font-size: 1.4rem;
-    }
+    header { padding: 8px 12px; }
+    header ul { gap: 12px; padding: 12px 0; }
+    header ul li a { padding: 10px 16px; font-size: 1rem; }
+    header h1 { font-size: 1.4rem; margin: 12px 0; }
+    .navigation-1 { padding: 0 12px; }
+    .nav-logo { margin: 0 12px 0 0; }
+    main { margin: 16px; padding: 20px 16px; }
+    section { padding: 16px; }
+    .header-title h1 { font-size: 1.4rem; }
 }

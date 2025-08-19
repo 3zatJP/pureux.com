@@ -6,12 +6,11 @@
     <meta name="robots" content="nofollow">
     <title>Check Trash。どこでも見れるゴミ分別アプリ。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-ja.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    <script src="../js/index.js" defer></script>
+    <script src="./move.js" defer></script>
 </head>
 <body>
     <div id="loader"></div>
@@ -23,9 +22,9 @@
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="../ja/about-us/about-us.html">pureUXについて</a></li>
-                <li><a href="#ai-plan">Check AI</a></li>
-                <li><a href="./ja/business/index.html">ビジネス向け</a></li>
-                <li><a href="#support">サポート</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#specs">仕様</a></li>
+                <li><a href="#ai-plan">プラン</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
@@ -34,44 +33,126 @@
         </div>
     </header>
     <main>
-        <section id="overview">
-            <h2>Check Trash とは？</h2>
-            <p>いつでもどこでも、ごみの日と分別がすぐ分かるアプリです。地域設定、分別検索、リマインド通知までこれひとつ。</p>
-            <p><a href="../ja/download/index.html" class="download-bt">無料で始める</a><a href="#features">機能を見る</a></p>
+        <section id="product-hero" class="product-hero hero-dark reveal">
+            <p class="eyebrow">ごみ分別・収集日 管理アプリ</p>
+            <h2 class="headline">毎日のくらしを、もっとシンプルに。</h2>
+            <p class="lead subhead">地域設定・分別検索・リマインド通知。すべてがひとつに。<br>オフラインでも使えるから、<span class="sub-1">いつでもどこでも</span>安心。</p>
+            <p class="cta-group">
+                <a href="../ja/download/index.html" class="download-bt cta-primary">無料で始める</a>
+                <a href="#features" class="btn-secondary cta-secondary">機能を見る</a>
+            </p>
+            <p class="note">iOS / Android / PWA 対応</p>
         </section>
-        <section id="features">
+
+        <section class="strapline reveal">
+            <p class="strap">ごみ出しカレンダーも、分別の迷いも、
+            <br>Check Trash なら、ひと目でわかる。</p>
+        </section>
+
+        <section id="gallery" class="gallery reveal">
+            <img src="../image/Logo.png" alt="Check Trash アプリ ロゴ">
+            <div class="badges">
+                <span class="badge">オフライン対応</span>
+                <span class="badge">無料で使える</span>
+                <span class="badge">通知リマインド</span>
+            </div>
+        </section>
+
+        <section class="split-feature reveal">
+            <div class="split-col">
+                <h3>地域別カレンダー</h3>
+                <p>設定した地域の収集日を自動表示。祝日振替にも対応。先の予定まで、スマートに把握できます。</p>
+            </div>
+            <div class="split-col visual">
+                <img src="../image/Logo.png" alt="カレンダーのイメージ">
+            </div>
+        </section>
+
+        <section class="split-feature reverse reveal">
+            <div class="split-col visual">
+                <img src="../image/Logo.png" alt="リマインドのイメージ">
+            </div>
+            <div class="split-col">
+                <h3>リマインド通知</h3>
+                <p>前日・当日に通知。忙しい朝でも、出し忘れをやさしく防止。あなたの生活リズムに合わせてカスタマイズ。</p>
+            </div>
+        </section>
+
+        <section id="features" class="reveal">
             <h2>主な機能</h2>
-            <ul>
-                <li><strong>オフラインでも使える</strong>：デバイス上にゴミ出しの日のデータを<br>事前にダウンロードすることで確認することができます</li>
-                <li><strong>地域別カレンダー</strong>：設定した地域の収集日を自動表示。</li>
-                <li><strong>地域検索</strong>：ほかの地域のゴミ出しの日もわかる</li>
-                <li><strong>リマインド通知</strong>：前日・当日の通知で出し忘れを防止。</li>
-                <li><strong>Chek AI</strong>：v2でリリース予定</li>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>地域別カレンダー</h3>
+                    <p>設定した地域の収集日を自動表示。祝日振替にも対応。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>分別検索</h3>
+                    <p>品目名から出し方をサッと検索。迷ったらすぐ解決。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>リマインド通知</h3>
+                    <p>前日・当日に通知。出し忘れをやさしく防止。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>オフライン対応</h3>
+                    <p>データを事前保存。通信圏外でも予定をチェック。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="specs" class="specs reveal">
+            <h2>仕様</h2>
+            <ul class="specs-list">
+                <li><strong>対応環境</strong>：iOS / Android / 最新ブラウザ</li>
+                <li><strong>言語</strong>：日本語（英語対応予定）</li>
+                <li><strong>データ</strong>：地域ごとの収集日・分別ルール</li>
+                <li><strong>通知</strong>：前日・当日・カスタム時刻</li>
+                <li><strong>プライバシー</strong>：個人情報の収集なし</li>
             </ul>
         </section>
-        <section id="how-it-works">
-            <h2>はじめかた</h2>
-            <ol>
-                <li>アプリをインストール</li>
-                <li>地域を設定（郵便番号を利用可能）</li>
-                <li>分別検索と通知を活用</li>
-            </ol>
+
+        <section id="ai-plan" class="pricing reveal">
+            <h2>料金・プラン</h2>
+            <div class="plans">
+                <div class="plan">
+                    <p class="plan-title">Free</p>
+                    <p class="plan-price">¥0</p>
+                    <ul class="plan-features">
+                        <li>地域設定・カレンダー</li>
+                        <li>分別検索</li>
+                        <li>リマインド通知</li>
+                    </ul>
+                    <p><a href="../ja/download/index.html" class="download-bt">今すぐ使う</a></p>
+                </div>
+                <div class="plan popular">
+                    <p class="plan-title">Check AI <span class="badge">近日提供</span></p>
+                    <p class="plan-price">未定</p>
+                    <ul class="plan-features">
+                        <li>オンラインAIに質問して解決</li>
+                        <li>地域ルールに沿った出し方を提案</li>
+                        <li>継続的な精度向上（ベータ）</li>
+                    </ul>
+                    <p class="note">オンデバイスAIが難しい場合にオンラインで補助</p>
+                </div>
+            </div>
         </section>
-        <section id="ai-plan">
-            <h2>AIプラン「Chek AI」</h2>
-            <ul>
-                <li>オンデバイスAI（Chek AI for on device）の処理が遅い場合、制度にいまいちな場合、オンラインでAIに聞ける機能です（有料）</li>
-                <li>地域ルールに合わせた出し方の案内</li>
-                <li>順次精度向上（ベータ）</li>
-            </ul>
+
+        <section class="cta-bottom hero-secondary reveal">
+            <h2 class="headline">毎日に、ちいさなゆとりを。</h2>
+            <p class="lead">Check Trash をはじめよう。</p>
+            <p class="cta-group">
+                <a href="../ja/download/index.html" class="download-bt cta-primary">無料で始める</a>
+                <a href="#features" class="btn-secondary cta-secondary">機能を見る</a>
+            </p>
         </section>
-        <section id="support">
+
+        <section id="support" class="reveal">
             <h2>サポート</h2>
-            <p>よくある質問や使い方ガイドは順次公開予定です。ご不明点は<a href="mailto:info@pureux.jp">メール</a>でお問い合わせください。</p>
+            <p>使い方や不明点はサポートチームが対応します。<a href="mailto:info@pureux.jp" class="feedback-link">メールで問い合わせる</a></p>
         </section>
-        <section id="contact">
+        <section id="contact" class="reveal">
             <h2>お問い合わせ</h2>
-            <p>ご質問・ご要望は<a href="mailto:info@pureux.jp">info@pureux.jp</a>までご連絡ください。</p>
+            <p>ご要望・ご提案は <a href="mailto:info@pureux.jp">info@pureux.jp</a> まで。</p>
         </section>
     </main>
     <footer>
