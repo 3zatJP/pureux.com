@@ -5,3 +5,4 @@
 サイトは基本HTMLとCSSで書かれており、jsも利用していますが、cursorを利用しています
 Android版のリリースは2026年3月にgithub版リリース、翌月4月にGoogle Playリリースをします。
 Beta版リリースはv2からPUblic Betaを始めます。v1に関しては秘密裏にベータ版のテストをテスターなどでします。
+iOS/iPadOS版のリリース時期は未定です。
