@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Trash - iOS版 開発情報</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-ja.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/team-logo.png">
+    <script src="../js/index.js" defer></script>
+    <script src="./move.js" defer></script>
+    <style>
+        .changelog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .version-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            margin-bottom: 24px;
+            overflow: hidden;
+            border-left: 4px solid #007AFF;
+        }
+        
+        .version-header {
+            background: linear-gradient(135deg, #007AFF, #0051D5);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .version-number {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .version-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .version-content {
+            padding: 20px;
+        }
+        
+        .changelog-section {
+            margin-bottom: 16px;
+        }
+        
+        .changelog-section h4 {
+            color: #007AFF;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .changelog-section h4::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #007AFF;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .changelog-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .changelog-list li {
+            margin-bottom: 6px;
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .feature-new { color: #34C759; font-weight: 500; }
+        .feature-improved { color: #007AFF; font-weight: 500; }
+        .feature-fixed { color: #FF3B30; font-weight: 500; }
+        
+        .platform-badge {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+        
+        .back-button:hover {
+            background: #0051D5;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .status-beta { background: #FF9500; color: white; }
+        .status-stable { background: #34C759; color: white; }
+        .status-alpha { background: #FF3B30; color: white; }
+        .status-discontinued { background: #8E8E93; color: white; }
+        
+        .discontinued-notice {
+            background: linear-gradient(135deg, #FF3B30, #D70015);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .discontinued-notice h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+        
+        .discontinued-notice p {
+            margin: 0;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="changelog-container">
+        <h1>Check Trash - iOS版 開発チェンジログ</h1>
+        
+        <a href="./home.html" class="back-button">← 開発情報トップに戻る</a>
+        
+        <div class="discontinued-notice">
+            <h3>⚠️ iOS版開発停止のお知らせ</h3>
+            <p>2025年7月から、iOS版の開発を停止しています。詳細は<a href="../Notice/index.htm" style="color: #FFE5E5; text-decoration: underline;">重要なお知らせ</a>をご確認ください。</p>
+        </div>
+<!--        
+        <div class="version-card">
+            <div class="version-header">
+                <div>
+                    <div class="version-number">v0</div>
+                    <div class="version-date">リリースしていません</div>
+                </div>
+                <span class="status-badge status-discontinued">開発停止</span>
+            </div>
+            <div class="version-content">
+                <div class="changelog-section">
+                    <h4>最終更新</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-improved">改善:</span> iOS 17対応の最終調整</li>
+                        <li><span class="feature-fixed">修正:</span> メモリリークの修正</li>
+                        <li><span class="feature-fixed">修正:</span> アプリクラッシュの修正</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>注意事項</h4>
+                    <ul class="changelog-list">
+                        <li>このバージョンがiOS版の最終リリースです</li>
+                        <li>App Storeからの配信は2025年1月末で終了予定です</li>
+                        <li>サポートは2025年3月末まで提供いたします</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="version-card">
+            <div class="version-header">
+                <div>
+                    <div class="version-number">v0.9.0-beta.1</div>
+                    <div class="version-date">2024年11月20日</div>
+                </div>
+                <span class="status-badge status-beta">BETA</span>
+            </div>
+            <div class="version-content">
+                <div class="changelog-section">
+                    <h4>新機能</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-new">新しい機能:</span> iOS 17対応</li>
+                        <li><span class="feature-new">新しい機能:</span> Dynamic Island対応</li>
+                        <li><span class="feature-new">新しい機能:</span> Live Activities機能</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>改善</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-improved">改善:</span> iOSネイティブUIの適用</li>
+                        <li><span class="feature-improved">改善:</span> パフォーマンスの最適化</li>
+                        <li><span class="feature-improved">改善:</span> アクセシビリティの向上</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>バグ修正</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-fixed">修正:</span> iPhone 15シリーズでの表示問題</li>
+                        <li><span class="feature-fixed">修正:</span> 通知権限の問題</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="version-card">
+            <div class="version-header">
+                <div>
+                    <div class="version-number">v0.8.0-alpha.3</div>
+                    <div class="version-date">2024年10月10日</div>
+                </div>
+                <span class="status-badge status-alpha">ALPHA</span>
+            </div>
+            <div class="version-content">
+                <div class="changelog-section">
+                    <h4>新機能</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-new">新しい機能:</span> 基本的なゴミ分別検索機能</li>
+                        <li><span class="feature-new">新しい機能:</span> 地域設定機能</li>
+                        <li><span class="feature-new">新しい機能:</span> お気に入り機能</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>既知の問題</h4>
+                    <ul class="changelog-list">
+                        <li>iOS 16以下での動作が不安定</li>
+                        <li>メモリ使用量が多い</li>
+                        <li>一部機能が未完成</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <h3>iOS版について</h3>
+            <p><strong>開発停止</strong> - 2024年12月</p>
+            <p>iOS版の開発は停止されましたが、以下の情報をご確認ください：</p>
+            <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                <li>Android版は継続開発中</li>
+                <li>Web版の開発を検討中</li>
+                <li>将来的なiOS版再開の可能性</li>
+                <li>既存ユーザーへのサポート継続</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

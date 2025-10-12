@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Trash - 開発情報</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-ja.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/team-logo.png">
+    <script src="../js/index.js" defer></script>
+    <script src="./move.js" defer></script>
+    <style>
+        .dev-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .platform-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        
+        .platform-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .android-header {
+            background: linear-gradient(135deg, #3BAF92, #2E7D32);
+            color: white;
+        }
+        
+        .ios-header {
+            background: linear-gradient(135deg, #007AFF, #0051D5);
+            color: white;
+        }
+        
+        .platform-info {
+            flex: 1;
+        }
+        
+        .platform-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        
+        .platform-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .platform-status {
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .status-discontinued {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .platform-content {
+            padding: 20px;
+        }
+        
+        .changelog-link {
+            display: inline-block;
+            background: #3BAF92;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            margin-right: 12px;
+        }
+        
+        .changelog-link:hover {
+            background: #2E7D32;
+        }
+        
+        .ios-changelog-link {
+            background: #007AFF;
+        }
+        
+        .ios-changelog-link:hover {
+            background: #0051D5;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #666;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+        
+        .back-button:hover {
+            background: #444;
+        }
+        
+        .discontinued-notice {
+            background: #FFE5E5;
+            border: 1px solid #FFCDD2;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+            color: #D32F2F;
+            font-size: 0.9rem;
+        }
+        
+        .development-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .development-info h3 {
+            color: #00796b;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dev-container">
+        <h1>Check Trash - 開発情報</h1>
+        
+        <a href="../index.html" class="back-button">← トップページに戻る</a>
+        
+        <div class="development-info">
+            <h3>開発状況について</h3>
+            <p>Check Trashは現在、Android版とiOS版で開発が進められています。各プラットフォームの最新の開発状況とチェンジログを確認できます。</p>
+        </div>
+        
+        <div class="platform-section">
+            <div class="platform-header android-header">
+                <div class="platform-info">
+                    <h2 class="platform-title">Android版</h2>
+                    <p class="platform-subtitle">Google Play Store向けアプリケーション</p>
+                </div>
+                <span class="platform-status status-active">開発中</span>
+            </div>
+            <div class="platform-content">
+                <p>Android版は現在ベータ版として開発が進められています。2025年3月の正式リリースを目指しています。</p>
+                <a href="./android-changelog.html" class="changelog-link">Android版チェンジログを見る</a>
+            </div>
+        </div>
+        
+        <div class="platform-section">
+            <div class="platform-header ios-header">
+                <div class="platform-info">
+                    <h2 class="platform-title">iOS版</h2>
+                    <p class="platform-subtitle">App Store向けアプリケーション</p>
+                </div>
+                <span class="platform-status status-discontinued">開発停止</span>
+            </div>
+            <div class="platform-content">
+                <p>iOS版は2024年12月をもって開発を停止いたしました。詳細は重要なお知らせをご確認ください。</p>
+                <a href="./ios-changelog.html" class="changelog-link ios-changelog-link">iOS版チェンジログを見る</a>
+                <div class="discontinued-notice">
+                    <strong>注意:</strong> iOS版の開発は停止されていますが、既存のチェンジログは参考としてご確認いただけます。
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e8f5e8; border-radius: 8px;">
+            <h3>フィードバック</h3>
+            <p>開発に関するご意見やご要望がございましたら、お気軽にお寄せください。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" target="_blank" rel="noopener" style="color: #00796b; font-weight: bold;">フィードバックフォーム</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Trash - Android版 開発チェンジログ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-ja.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/team-logo.png">
+    <script src="../js/index.js" defer></script>
+    <script src="./move.js" defer></script>
+    <style>
+        .changelog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .version-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            margin-bottom: 24px;
+            overflow: hidden;
+            border-left: 4px solid #3BAF92;
+        }
+        
+        .version-header {
+            background: linear-gradient(135deg, #3BAF92, #2E7D32);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .version-number {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .version-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .version-content {
+            padding: 20px;
+        }
+        
+        .changelog-section {
+            margin-bottom: 16px;
+        }
+        
+        .changelog-section h4 {
+            color: #00796b;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .changelog-section h4::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #3BAF92;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .changelog-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .changelog-list li {
+            margin-bottom: 6px;
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .feature-new { color: #2E7D32; font-weight: 500; }
+        .feature-improved { color: #1976D2; font-weight: 500; }
+        .feature-fixed { color: #D32F2F; font-weight: 500; }
+        
+        .platform-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #3BAF92;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+        
+        .back-button:hover {
+            background: #2E7D32;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .status-beta { background: #FF9800; color: white; }
+        .status-stable { background: #4CAF50; color: white; }
+        .status-alpha { background: #F44336; color: white; }
+    </style>
+</head>
+<body>
+    <div class="changelog-container">
+        <h1>Check Trash - Android版 開発チェンジログ</h1>
+        
+        <a href="./home.html" class="back-button">← 開発情報トップに戻る</a>
+        
+        <div class="version-card">
+            <div class="version-header">
+                <div>
+                    <div class="version-number">v1.0.0-beta.3</div>
+                    <div class="version-date">2025年1月15日</div>
+                </div>
+                <span class="status-badge status-beta">BETA</span>
+            </div>
+            <div class="version-content">
+                <div class="changelog-section">
+                    <h4>新機能</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-new">新しい機能:</span> ゴミ分別AI機能の追加</li>
+                        <li><span class="feature-new">新しい機能:</span> カメラでのゴミ認識機能</li>
+                        <li><span class="feature-new">新しい機能:</span> オフライン対応の改善</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>改善</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-improved">改善:</span> UI/UXの大幅な改善</li>
+                        <li><span class="feature-improved">改善:</span> アプリ起動速度の向上</li>
+                        <li><span class="feature-improved">改善:</span> メモリ使用量の最適化</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>バグ修正</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-fixed">修正:</span> 特定の機種でのクラッシュ問題を解決</li>
+                        <li><span class="feature-fixed">修正:</span> 通知が表示されない問題を修正</li>
+                        <li><span class="feature-fixed">修正:</span> データ同期エラーの修正</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="version-card">
+            <div class="version-header">
+                <div>
+                    <div class="version-number">v1.0.0-beta.2</div>
+                    <div class="version-date">2024年12月20日</div>
+                </div>
+                <span class="status-badge status-beta">BETA</span>
+            </div>
+            <div class="version-content">
+                <div class="changelog-section">
+                    <h4>新機能</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-new">新しい機能:</span> プッシュ通知機能の追加</li>
+                        <li><span class="feature-new">新しい機能:</span> 地域別ゴミ分別情報の拡充</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>改善</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-improved">改善:</span> 検索機能の精度向上</li>
+                        <li><span class="feature-improved">改善:</span> ダークモード対応の改善</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>バグ修正</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-fixed">修正:</span> Android 14での動作問題を修正</li>
+                        <li><span class="feature-fixed">修正:</span> レイアウト崩れの修正</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="version-card">
+            <div class="version-header">
+                <div>
+                    <div class="version-number">v1.0.0-beta.1</div>
+                    <div class="version-date">2024年11月30日</div>
+                </div>
+                <span class="status-badge status-beta">BETA</span>
+            </div>
+            <div class="version-content">
+                <div class="changelog-section">
+                    <h4>新機能</h4>
+                    <ul class="changelog-list">
+                        <li><span class="feature-new">新しい機能:</span> 初回リリース</li>
+                        <li><span class="feature-new">新しい機能:</span> 基本的なゴミ分別検索機能</li>
+                        <li><span class="feature-new">新しい機能:</span> 地域設定機能</li>
+                        <li><span class="feature-new">新しい機能:</span> お気に入り機能</li>
+                    </ul>
+                </div>
+                <div class="changelog-section">
+                    <h4>既知の問題</h4>
+                    <ul class="changelog-list">
+                        <li>一部の機種でアプリが不安定になる場合があります</li>
+                        <li>オフライン機能が完全ではありません</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <h3>今後の予定</h3>
+            <p><strong>v1.0.0 (正式版)</strong> - 2025年3月予定</p>
+            <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                <li>パフォーマンスの大幅改善</li>
+                <li>新機能の追加</li>
+                <li>UI/UXの完全リニューアル</li>
+                <li>多言語対応</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
