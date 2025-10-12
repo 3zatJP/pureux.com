@@ -6,12 +6,412 @@
         <title>さいとまっぷ</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style-ja.css">
+        <style>
+            .sitemap-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+                font-family: 'Kosugi Maru', sans-serif;
+            }
+
+            .sitemap-header {
+                text-align: center;
+                margin-bottom: 40px;
+                padding: 30px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border-radius: 15px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            }
+
+            .sitemap-header h2 {
+                font-size: 2.5rem;
+                margin: 0 0 10px 0;
+                font-weight: 600;
+            }
+
+            .sitemap-header p {
+                font-size: 1.1rem;
+                margin: 0;
+                opacity: 0.9;
+            }
+
+            .sitemap-map {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+                margin-bottom: 40px;
+            }
+
+            .map-section {
+                background: white;
+                border-radius: 15px;
+                padding: 20px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                border: 2px solid #f0f0f0;
+                transition: all 0.3s ease;
+            }
+
+            .map-section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+                border-color: #667eea;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #e0e0e0;
+                text-align: center;
+            }
+
+            .page-node {
+                background: #f8f9fa;
+                border-radius: 12px;
+                padding: 15px;
+                margin-bottom: 15px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .page-node::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                transition: left 0.5s;
+            }
+
+            .page-node:hover::before {
+                left: 100%;
+            }
+
+            .page-node:hover {
+                background: #e3f2fd;
+                border-color: #2196f3;
+                transform: scale(1.02);
+            }
+
+            .page-node.active {
+                background: #e8f5e8;
+                border-color: #4caf50;
+                box-shadow: 0 4px 15px rgba(76,175,80,0.2);
+            }
+
+            .node-icon {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .node-content h3 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #333;
+                margin: 0 0 8px 0;
+                text-align: center;
+            }
+
+            .node-content p {
+                font-size: 0.9rem;
+                color: #666;
+                margin: 0 0 12px 0;
+                text-align: center;
+                line-height: 1.4;
+            }
+
+            .node-link {
+                display: block;
+                text-align: center;
+                background: #667eea;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .node-link:hover {
+                background: #5a6fd8;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+            }
+
+            .page-details {
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                border: 2px solid #f0f0f0;
+                min-height: 200px;
+            }
+
+            .details-content h3 {
+                font-size: 1.5rem;
+                color: #333;
+                margin: 0 0 15px 0;
+                text-align: center;
+            }
+
+            .details-content p {
+                font-size: 1rem;
+                color: #666;
+                line-height: 1.6;
+                text-align: center;
+                margin: 0 0 20px 0;
+            }
+
+            .details-actions {
+                text-align: center;
+            }
+
+            .details-actions a {
+                display: inline-block;
+                background: #4caf50;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 10px;
+                transition: all 0.3s ease;
+            }
+
+            .details-actions a:hover {
+                background: #45a049;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+            }
+
+            /* セクション別の色分け */
+            .main-section .section-title {
+                color: #e91e63;
+                border-bottom-color: #e91e63;
+            }
+
+            .app-section .section-title {
+                color: #ff9800;
+                border-bottom-color: #ff9800;
+            }
+
+            .japanese-section .section-title {
+                color: #9c27b0;
+                border-bottom-color: #9c27b0;
+            }
+
+            .dev-section .section-title {
+                color: #2196f3;
+                border-bottom-color: #2196f3;
+            }
+
+            .changelog-section .section-title {
+                color: #4caf50;
+                border-bottom-color: #4caf50;
+            }
+
+            /* レスポンシブデザイン */
+            @media (max-width: 768px) {
+                .sitemap-container {
+                    padding: 15px;
+                }
+
+                .sitemap-header h2 {
+                    font-size: 2rem;
+                }
+
+                .sitemap-map {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .map-section {
+                    padding: 15px;
+                }
+
+                .page-node {
+                    padding: 12px;
+                }
+
+                .node-icon {
+                    font-size: 1.5rem;
+                }
+
+                .page-details {
+                    padding: 20px;
+                }
+            }
+
+            /* アニメーション */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .map-section {
+                animation: fadeInUp 0.6s ease-out;
+            }
+
+            .map-section:nth-child(1) { animation-delay: 0.1s; }
+            .map-section:nth-child(2) { animation-delay: 0.2s; }
+            .map-section:nth-child(3) { animation-delay: 0.3s; }
+            .map-section:nth-child(4) { animation-delay: 0.4s; }
+            .map-section:nth-child(5) { animation-delay: 0.5s; }
+        </style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
         <script src="js/index.js" defer></script>
         <script src="js/move.js" defer></script>
-        <script src="js/sitemap.js" defer></script>
+        <script>
+            // サイトマップのインタラクティブ機能
+            document.addEventListener('DOMContentLoaded', function() {
+                const pageNodes = document.querySelectorAll('.page-node');
+                const pageDetails = document.getElementById('pageDetails');
+                const detailsTitle = document.getElementById('detailsTitle');
+                const detailsDescription = document.getElementById('detailsDescription');
+                const detailsActions = document.getElementById('detailsActions');
+
+                // ページ情報のデータベース
+                const pageData = {
+                    'index.html': {
+                        title: 'ホームページ',
+                        description: 'Check Trashのメインページです。アプリの概要、機能紹介、ダウンロードリンクなどが含まれています。',
+                        features: ['アプリ概要', '機能紹介', 'ダウンロード', 'フィードバック']
+                    },
+                    'about-apprication/index.html': {
+                        title: 'アプリ開発状況',
+                        description: 'Check Trashアプリの開発状況を詳しく紹介しています。Android版とiOS版の進捗状況を確認できます。',
+                        features: ['開発進捗', '機能一覧', 'タイムライン', 'ベータテスト']
+                    },
+                    'about-apprication/Checktrarsh/about-app.html': {
+                        title: 'アプリ詳細情報',
+                        description: 'Check Trashアプリの詳細な機能説明と使用方法を紹介しています。',
+                        features: ['機能詳細', '使用方法', '対応デバイス']
+                    },
+                    'ja/download/index.html': {
+                        title: 'ダウンロードページ',
+                        description: 'Check Trashアプリのダウンロードページです。Android版とiOS版のダウンロードリンクが含まれています。',
+                        features: ['Android版', 'iOS版', 'システム要件', 'インストール方法']
+                    },
+                    'ja/about-us/about-us.html': {
+                        title: 'pureUXについて',
+                        description: 'pureUX株式会社の企業情報、チームメンバー、事業内容を紹介しています。',
+                        features: ['企業理念', '事業内容', 'チーム紹介', 'お問い合わせ']
+                    },
+                    'dev/home.html': {
+                        title: '開発情報',
+                        description: 'Check Trashの開発情報とチェンジログを確認できます。最新の開発状況を把握できます。',
+                        features: ['開発状況', 'チェンジログ', '技術情報']
+                    },
+                    'Notice/index.htm': {
+                        title: '重要なお知らせ',
+                        description: 'iOS版アプリ開発停止に関する重要なお知らせです。詳細な理由と今後の方針を説明しています。',
+                        features: ['開発停止理由', '今後の方針', '代替手段']
+                    },
+                    'dev/android-changelog.html': {
+                        title: 'Android版チェンジログ',
+                        description: 'Android版Check Trashアプリの更新履歴と変更内容を確認できます。',
+                        features: ['バージョン履歴', '新機能', 'バグ修正']
+                    },
+                    'dev/ios-changelog.html': {
+                        title: 'iOS版チェンジログ',
+                        description: 'iOS版Check Trashアプリの更新履歴と変更内容を確認できます。（開発停止済み）',
+                        features: ['バージョン履歴', '新機能', 'バグ修正']
+                    }
+                };
+
+                // ページノードクリックイベント
+                pageNodes.forEach(node => {
+                    node.addEventListener('click', function() {
+                        const pagePath = this.getAttribute('data-page');
+                        const data = pageData[pagePath];
+                        
+                        if (data) {
+                            // アクティブ状態の切り替え
+                            pageNodes.forEach(n => n.classList.remove('active'));
+                            this.classList.add('active');
+                            
+                            // 詳細情報の更新
+                            detailsTitle.textContent = data.title;
+                            detailsDescription.textContent = data.description;
+                            
+                            // アクションボタンの生成
+                            detailsActions.innerHTML = '';
+                            
+                            // ページへのリンク
+                            const pageLink = document.createElement('a');
+                            pageLink.href = pagePath;
+                            pageLink.textContent = 'ページにアクセス';
+                            pageLink.target = '_blank';
+                            detailsActions.appendChild(pageLink);
+                            
+                            // 機能一覧の表示
+                            if (data.features && data.features.length > 0) {
+                                const featuresDiv = document.createElement('div');
+                                featuresDiv.style.marginTop = '20px';
+                                featuresDiv.innerHTML = `
+                                    <h4 style="color: #333; margin-bottom: 10px;">主な機能・内容:</h4>
+                                    <ul style="text-align: left; color: #666; line-height: 1.6;">
+                                        ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+                                    </ul>
+                                `;
+                                detailsActions.appendChild(featuresDiv);
+                            }
+                            
+                            // アニメーション効果
+                            pageDetails.style.opacity = '0';
+                            setTimeout(() => {
+                                pageDetails.style.opacity = '1';
+                            }, 100);
+                        }
+                    });
+                });
+
+                // ホバー効果の強化
+                pageNodes.forEach(node => {
+                    node.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.05) translateY(-2px)';
+                    });
+                    
+                    node.addEventListener('mouseleave', function() {
+                        if (!this.classList.contains('active')) {
+                            this.style.transform = 'scale(1) translateY(0)';
+                        }
+                    });
+                });
+
+                // キーボードナビゲーション
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        pageNodes.forEach(node => node.classList.remove('active'));
+                        detailsTitle.textContent = 'ページを選択してください';
+                        detailsDescription.textContent = '左の地図からページをクリックすると、詳細情報が表示されます。';
+                        detailsActions.innerHTML = '';
+                    }
+                });
+
+                // 初期状態の設定
+                detailsTitle.textContent = 'ページを選択してください';
+                detailsDescription.textContent = '左の地図からページをクリックすると、詳細情報が表示されます。';
+            });
+        </script>
         <meta name="robots" content="noindex, nofollow">
         <link rel="icon" type="image/png" href="image/team-logo.png">
         <meta name="author" content="pureUX Development Team"><!--Author 3z_at -->
@@ -33,8 +433,121 @@
             </div>
             <img src="image/team-logo.png" alt="pureUX Logo" class="mainlogo">    
         </header>
-        <mein>
-            
-        </mein>
+        <main>
+            <div class="sitemap-container">
+                <div class="sitemap-header">
+                    <h2>Check Trash サイトマップ</h2>
+                    <p>サイト内のすべてのページを地図のように表示しています</p>
+                </div>
+                
+                <div class="sitemap-map">
+                    <!-- メインページ群 -->
+                    <div class="map-section main-section">
+                        <div class="section-title">メインページ</div>
+                        <div class="page-node main-page" data-page="index.html">
+                            <div class="node-icon">🏠</div>
+                            <div class="node-content">
+                                <h3>ホーム</h3>
+                                <p>Check Trash メインページ</p>
+                                <a href="index.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- アプリケーション情報 -->
+                    <div class="map-section app-section">
+                        <div class="section-title">アプリケーション情報</div>
+                        <div class="page-node app-page" data-page="about-apprication/index.html">
+                            <div class="node-icon">📱</div>
+                            <div class="node-content">
+                                <h3>アプリ開発状況</h3>
+                                <p>Check Trash アプリの開発状況</p>
+                                <a href="about-apprication/index.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                        <div class="page-node app-detail-page" data-page="about-apprication/Checktrarsh/about-app.html">
+                            <div class="node-icon">🔧</div>
+                            <div class="node-content">
+                                <h3>アプリ詳細</h3>
+                                <p>Check Trash アプリの詳細情報</p>
+                                <a href="about-apprication/Checktrarsh/about-app.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日本語ページ群 -->
+                    <div class="map-section japanese-section">
+                        <div class="section-title">日本語ページ</div>
+                        <div class="page-node download-page" data-page="ja/download/index.html">
+                            <div class="node-icon">⬇️</div>
+                            <div class="node-content">
+                                <h3>ダウンロード</h3>
+                                <p>アプリのダウンロードページ</p>
+                                <a href="ja/download/index.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                        <div class="page-node about-page" data-page="ja/about-us/about-us.html">
+                            <div class="node-icon">👥</div>
+                            <div class="node-content">
+                                <h3>pureUXについて</h3>
+                                <p>会社情報とチーム紹介</p>
+                                <a href="ja/about-us/about-us.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 開発・お知らせ -->
+                    <div class="map-section dev-section">
+                        <div class="section-title">開発・お知らせ</div>
+                        <div class="page-node dev-page" data-page="dev/home.html">
+                            <div class="node-icon">💻</div>
+                            <div class="node-content">
+                                <h3>開発情報</h3>
+                                <p>開発状況とチェンジログ</p>
+                                <a href="dev/home.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                        <div class="page-node notice-page" data-page="Notice/index.htm">
+                            <div class="node-icon">📢</div>
+                            <div class="node-content">
+                                <h3>重要なお知らせ</h3>
+                                <p>iOS版開発停止について</p>
+                                <a href="Notice/index.htm" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- チェンジログ -->
+                    <div class="map-section changelog-section">
+                        <div class="section-title">チェンジログ</div>
+                        <div class="page-node android-changelog" data-page="dev/android-changelog.html">
+                            <div class="node-icon">🤖</div>
+                            <div class="node-content">
+                                <h3>Android版チェンジログ</h3>
+                                <p>Android版の更新履歴</p>
+                                <a href="dev/android-changelog.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                        <div class="page-node ios-changelog" data-page="dev/ios-changelog.html">
+                            <div class="node-icon">🍎</div>
+                            <div class="node-content">
+                                <h3>iOS版チェンジログ</h3>
+                                <p>iOS版の更新履歴</p>
+                                <a href="dev/ios-changelog.html" class="node-link">アクセス</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ページ詳細情報 -->
+                <div class="page-details" id="pageDetails">
+                    <div class="details-content">
+                        <h3 id="detailsTitle">ページを選択してください</h3>
+                        <p id="detailsDescription">左の地図からページをクリックすると、詳細情報が表示されます。</p>
+                        <div class="details-actions" id="detailsActions"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
