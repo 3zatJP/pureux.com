@@ -14,31 +14,25 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             category: 'app',
             question: 'どの地域に対応していますか？',
-            answer: '現在、日本国内の主要な自治体に対応しています。対応地域は順次拡大予定です。',
+            answer: '現在、茨城県土浦市、つくば市、水戸市で利用できるように準備しています。',
             image: null
         },
         {
             category: 'app',
             question: 'アプリは無料で使えますか？',
-            answer: '基本的な機能は無料でご利用いただけます。一部の高度な機能（Check AIなど）は有料サブスクリプションが必要です。',
+            answer: '基本的な機能は無料でご利用いただけます。',
             image: null
         },
-        {
-            category: 'app',
-            question: 'Android版とiOS版の違いはありますか？',
-            answer: '基本的な機能は同じですが、プラットフォームごとに最適化されています。一部の機能はプラットフォームによって異なる場合があります。',
-            image: null
-        },
+        //{
+        //    category: 'app',
+        //    question: 'Android版とiOS版の違いはありますか？',
+        //    answer: '基本的な機能は同じですが、プラットフォームごとに最適化されています。一部の機能はプラットフォームによって異なる場合があります。',
+        //    image: null
+        //},
         {
             category: 'account',
             question: 'アカウント作成は必要ですか？',
-            answer: '基本的な機能を使用する場合はアカウント作成は不要です。ただし、データの同期や高度な機能を利用する場合はアカウント作成をお勧めします。',
-            image: null
-        },
-        {
-            category: 'account',
-            question: 'アカウントを削除する方法は？',
-            answer: 'アプリの設定画面から「アカウント削除」を選択してください。削除前にデータのバックアップを取ることをお勧めします。',
+            answer: 'このアプリにアカウントを利用する機能・ログインする機能は存在しません。もちろん、作成画面も存在しません',
             image: null
         },
         {
@@ -56,25 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             category: 'troubleshooting',
             question: 'ゴミの日が正しく表示されない',
-            answer: '地域設定が正しいか確認してください。自治体の情報が変更されている場合は、アプリを最新版に更新するか、お問い合わせください。',
-            image: null
-        },
-        {
-            category: 'subscription',
-            question: 'Check AIとは何ですか？',
-            answer: 'Check AIは、AIを活用してゴミの分別を自動で判定する機能です。写真を撮るだけで、そのゴミがどの分類に該当するかを教えてくれます。',
-            image: null
-        },
-        {
-            category: 'subscription',
-            question: 'サブスクリプションの解約方法は？',
-            answer: 'アプリ内の設定画面、またはApp Store/Google Playのサブスクリプション管理画面から解約できます。',
-            image: null
-        },
-        {
-            category: 'subscription',
-            question: 'サブスクリプションの料金は？',
-            answer: '料金プランの詳細は、アプリ内のサブスクリプション画面でご確認いただけます。',
+            answer: '地域設定が正しいか確認してください。<br>また、スマートフォン側の日付・日時が現在の日付・時刻と一致することを確認してください。<br>自治体の情報が変更されている場合は、アプリを最新版に更新するか、お問い合わせください。',
             image: null
         },
         {
@@ -95,7 +71,12 @@ document.addEventListener('DOMContentLoaded', function() {
             answer: 'はい、フィードバックフォームから機能のリクエストをお送りいただけます。開発チームで検討させていただきます。',
             image: null
         }
-    ];
+        {
+            category:'app',
+            question:'アプリがアプリストアで見つからない',
+            question:'現在のバージョンであるv1は ARM64bit Android 10以降のデバイスでインストール・動作するように設計されています。<br>',
+        }
+        ];
 
     // カテゴリ名の日本語マッピング
     const categoryNames = {
