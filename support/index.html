@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="pureUX Development Team">
+    <meta name="robots" content="nofollow">
+    <title>サポート - Check Trash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-ja.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/team-logo.png">
+    <script src="../js/index.js" defer></script>
+    <script src="../js/support.js" defer></script>
+    <style>
+        .support-container {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .search-section {
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-family: 'Kosugi Maru', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #999;
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1rem;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Kosugi Maru', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .category-btn.active {
+            background: #4a90e2;
+            color: white;
+            border-color: #4a90e2;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-category {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin: 0.25rem 0;
+        }
+
+        .faq-image-container {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .faq-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 0.5rem 0;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        .no-results-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .results-count {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .support-container {
+                padding: 1rem;
+            }
+
+            .search-input {
+                font-size: 1rem;
+                padding: 0.875rem 0.875rem 0.875rem 2.5rem;
+            }
+
+            .category-filters {
+                gap: 0.375rem;
+            }
+
+            .category-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .faq-item {
+                padding: 1rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loader"></div>
+    <header>
+        <nav class="navigation-1">
+            <a href="../" class="nav-logo"><img src="../image/Logo.png" alt="pureUX Logo"></a>
+            <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../">ホーム</a></li>
+                <li><a href="../ja/about-us/about-us.html">pureUXについて</a></li>
+                <li><a href="#support" class="nav-support">サポート</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+                <li><a href="../sitemap.html">さいとまっぷ</a></li>
+            </ul>
+        </nav>
+        <div class="header-title">
+            <h1>サポートセンター</h1>
+        </div>
+    </header>
+    <main>
+        <section id="support" class="support-container">
+            <h2>よくある質問（FAQ）</h2>
+            <p>お困りの際は、まずこちらをご確認ください。</p>
+
+            <div class="search-section">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="質問を検索...">
+                </div>
+                <div class="category-filters" id="categoryFilters">
+                    <button class="category-btn active" data-category="all">すべて</button>
+                    <button class="category-btn" data-category="app">アプリについて</button>
+                    <button class="category-btn" data-category="account">アカウント</button>
+                    <button class="category-btn" data-category="troubleshooting">トラブルシューティング</button>
+                    <button class="category-btn" data-category="subscription">サブスクリプション</button>
+                    <button class="category-btn" data-category="other">その他</button>
+                </div>
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+
+            <div class="no-results" id="noResults">
+                <div class="no-results-icon">🔍</div>
+                <p>検索結果が見つかりませんでした</p>
+                <p>別のキーワードで検索してみてください</p>
+            </div>
+
+            <div class="faq-list" id="faqList">
+                <!-- FAQアイテムはJavaScriptで動的に生成されます -->
+            </div>
+        </section>
+
+        <section id="contact" class="support-container">
+            <h2>お問い合わせ</h2>
+            <p>FAQで解決しない場合は、以下の方法でお問い合わせください。</p>
+            <ul>
+                <li>メール: <a href="mailto:info@pureux.jp">info@pureux.jp</a></li>
+                <li>フィードバックフォーム: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" target="_blank" rel="noopener">こちらから</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 pureUX Team. All rights reserved.</p>
+        <p>画像の提供元：sioyakitori</p>
+        <a href="https://x.com/pureux_dev?s=21">公式X</a>
+    </footer>
+</body>
+</html>
