@@ -70,11 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
             question: '機能のリクエストはできますか？',
             answer: 'はい、フィードバックフォームから機能のリクエストをお送りいただけます。開発チームで検討させていただきます。',
             image: null
-        }
+        },
         {
             category:'app',
             question:'アプリがアプリストアで見つからない',
-            question:'現在のバージョンであるv1は ARM64bit Android 10以降のデバイスでインストール・動作するように設計されています。<br>',
+            question:'現在のバージョンであるv1は ARM64bit Android 10以降のデバイスでインストール・動作するように設計されています。<br>それ以外のOS（iPhone）やそれ以前のOSでは利用できません',
+            image:null
         }
         ];
 
