@@ -102,6 +102,21 @@ body {
     color: #ee5a24 !important;
 }
 
+/* ナビゲーションのサポートリンク（画像対応） */
+.nav-support {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-support .nav-icon {
+    width: 1.2em;
+    height: 1.2em;
+    object-fit: contain;
+    vertical-align: middle;
+    display: inline-block;
+}
+
 /* ローディングアニメーション */
 #loader {
     position: fixed;
