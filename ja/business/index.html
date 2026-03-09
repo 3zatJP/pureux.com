@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="pureUX Development Team">
+    <meta name="robots" content="nofollow">
+    <title>ビジネス向け - Check Trash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/style-ja.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../image/team-logo.png">
+    <script src="../../js/index.js" defer></script>
+    <style>
+        .business-container {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            border: 2px solid #4a90e2;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: #4a90e2;
+            margin-top: 0;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            background: #f9f9f9;
+            border-left: 4px solid #2ecc71;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .benefit-item h4 {
+            color: #2ecc71;
+            margin-top: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .highlight-box h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            background: #2ecc71;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .contact-cta:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="loader"></div>
+    <header>
+        <nav class="navigation-1">
+            <a href="../../" class="nav-logo"><img src="../../image/Logo.png" alt="pureUX Logo"></a>
+            <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../../index.html">ホーム</a></li>
+                <li><a href="../about-us/about-us.html">pureUXについて</a></li>
+                <li><a href="#services">ビジネスソリューション</a></li>
+                <li><a href="../../Notice/index.htm" class="nav-notice">重要なお知らせ</a></li>
+                <li><a href="../../support/index.html" class="nav-support">サポート</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+                <li><a href="../../sitemap.html">さいとまっぷ</a></li>
+            </ul>
+        </nav>
+        <div class="header-title">
+            <h1>ビジネス向けソリューション - Check Trash</h1>
+        </div>
+    </header>
+    <main>
+        <div class="business-container">
+            <section>
+                <h2>🏢 自治体・企業向けソリューション</h2>
+                <p>pureUX は、自治体・企業向けの IT ソリューションを提供し、市民サービスの向上とデジタル化を支援します。</p>
+            </section>
+
+            <section id="services">
+                <h2>📋 提供サービス</h2>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🗑️</div>
+                    <h3>Check Trash 導入</h3>
+                    <p>市民向けゴミ分別通知アプリ「Check Trash」を貴自治体に統合することで、以下のメリットが実現されます：</p>
+                    <ul>
+                        <li><strong>市民利便性の向上</strong>：スマートフォンからいつでもゴミ出しスケジュールを確認</li>
+                        <li><strong>ゴミ出し忘れ防止</strong>：プッシュ通知でゴミ出しの日をお知らせ</li>
+                        <li><strong>紙資源削減</strong>：紙のゴミカレンダー配布コストの削減</li>
+                        <li><strong>環境への配慮</strong>：ペーパーレス化による CO2 削減</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💻</div>
+                    <h3>UI/UX コンサルティング</h3>
+                    <p>Web サービス・アプリの UI/UX 改善を通じて、ユーザー満足度を向上させます。</p>
+                    <ul>
+                        <li>既存サービスのユーザビリティ診断</li>
+                        <li>UI/UX 設計・改善提案</li>
+                        <li>アクセシビリティ対応</li>
+                        <li>ユーザーテスト・フィードバック活用</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>IT ソリューション開発</h3>
+                    <p>自治体・企業特有のニーズに応じた、カスタム IT ソリューションの開発をいたします。</p>
+                    <ul>
+                        <li>要件定義から運用まで一貫した支援</li>
+                        <li>クラウド・オンプレミス対応</li>
+                        <li>セキュリティ・プライバシー対応</li>
+                        <li>スケーラビリティを考慮した設計</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>✨ Check Trash の特徴</h2>
+                <p>Check Trash を自治体に導入することで、以下の特徴が活かされます：</p>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h4>🔔 プッシュ通知</h4>
+                        <p>市民がゴミ出しの日を忘れることなく、通知を受け取ることができます。</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>📱 オフライン対応</h4>
+                        <p>インターネット接続がなくてもアプリ内のデータを確認できます。</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>⚡ 高速・軽量</h4>
+                        <p>低スペックのスマートフォンでも快適に利用できます。</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>🛡️ プライバシー重視</h4>
+                        <p>個人情報はスマートフォン内に保存され、外部サーバーに送信されません。</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>🎨 カスタマイズ可能</h4>
+                        <p>自治体ロゴやカラースキームのカスタマイズが可能です。</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>🌍 継続的なサポート</h4>
+                        <p>運用開始後も技術サポートを提供いたします。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>💡 導入実績</h2>
+                <p>Check Trash は、茨城県内の 7 つの市町村と連携しており、市民向けゴミ分別サービスを提供しています。</p>
+                <ul>
+                    <li>土浦市</li>
+                    <li>つくば市</li>
+                    <li>水戸市</li>
+                    <li>東海村</li>
+                    <li>かすみがうら市</li>
+                    <li>阿見町</li>
+                    <li>行方市</li>
+                </ul>
+                <p><a href="../modules/municipalities.html">詳しくはこちら →</a></p>
+            </section>
+
+            <div class="highlight-box">
+                <h2>🤝 貴自治体・企業のデジタル化をお手伝いします</h2>
+                <p>pureUX は、高校生による開発チームとして、革新的で質の高い IT ソリューションを提供いたします。</p>
+                <p>ご不明な点や詳細なお見積もりなど、お気軽にお問い合わせください。</p>
+                <a href="mailto:info@pureux.jp" class="contact-cta">📧 お問い合わせ</a>
+            </div>
+
+            <section>
+                <h2>📞 お問い合わせ</h2>
+                <p>ビジネスについてのご相談、ご提案、お見積もり依頼など、以下の方法でお気軽にお問い合わせください。</p>
+                <ul>
+                    <li><strong>メール：</strong> <a href="mailto:info@pureux.jp">info@pureux.jp</a></li>
+                    <li><strong>公式 X：</strong> <a href="https://x.com/pureux_dev">@pureux_dev</a></li>
+                </ul>
+                <p>ご連絡いただいた内容に基づいて、こちらからご返信させていただきます。</p>
+            </section>
+        </div>
+
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>ご質問・ご要望は<a href="mailto:info@pureux.jp">info@pureux.jp</a>までご連絡ください。</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 pureUX Team. All rights reserved.</p>
+        <p>画像の提供元：sioyakitori</p>
+        <a href="https://x.com/pureux_dev?s=21">公式X</a>
+    </footer>
+</body>
+</html>
