@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             category: 'app',
             question: 'どのような OS に対応していますか？',
-            answer: '現在は Android 版を提供しています。<ul><li><strong>Android 版：</strong> 2026 年 4 月に Google Play ストアでの配布予定</li><li><strong>iOS/iPadOS 版：</strong> 開発予定（時期未定）</li></ul><p>詳細は<a href="../ja/roadmap/index.html">ロードマップ</a>をご覧ください。</p>',
+            answer: '現在は Android 版を提供しています。<ul><li><strong>Android 版：</strong> 2026 年 4 月に Google Play ストアでの配布予定</li><li><strong>iOS/iPadOS 版：</strong> 開発予定（時期未定）</li></ul><p>詳細は<a href="/pages/roadmap/index.html">ロードマップ</a>をご覧ください。</p>',
             image: null
         },
         {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             category: 'app',
             question: '自分の地域は対応していますか？',
-            answer: 'Check Trash は現在、茨城県内の以下 7 つの市町村に対応しています：<ul><li>土浦市</li><li>つくば市</li><li>水戸市</li><li>東海村</li><li>かすみがうら市</li><li>阿見町</li><li>行方市</li></ul><p>詳細は<a href="../ja/modules/municipalities.html">対応市町村ページ</a>をご覧ください。</p>',
+            answer: 'Check Trash は現在、茨城県内の以下 7 つの市町村に対応しています：<ul><li>土浦市</li><li>つくば市</li><li>水戸市</li><li>東海村</li><li>かすみがうら市</li><li>阿見町</li><li>行方市</li></ul><p>詳細は<a href="/pages/municipalities/index.html">対応市町村ページ</a>をご覧ください。</p>',
             image: null
         },
         {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             category: 'other',
             question: 'ベータ版に参加する方法は？',
-            answer: 'Android版はGitHubから、iOS版はTestFlightからインストールできます。詳細は<a href="../index.html#team-betaprogram">こちら</a>をご確認ください。',
+            answer: 'Android版はGitHubから、iOS版はTestFlightからインストールできます。詳細は<a href="/pages/download/index.html">ダウンロードページ</a>をご確認ください。',
             image: null
         },
         {

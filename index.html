@@ -4,67 +4,106 @@
     <meta charset="UTF-8">
     <meta name="author" content="pureUX Development Team">
     <meta name="robots" content="nofollow">
-    <title>Check Trash。どこでも見れるゴミ分別アプリ。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style-ja.css">
+    <meta name="description" content="Check Trash 公式サイト。ゴミの日通知アプリの紹介、対応地域、開発状況をご案内します。">
+    <title>Check Trash | 公式サイト</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="./image/team-logo.png">
-    <script src="./js/index.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
-    <div id="loader"></div>
-    <header>
-        <nav class="navigation-1">
-            <a href="./" class="nav-logo"><img src="./image/Logo.png" alt="pureUX Logo"></a>
-            <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="./ja/about-us/about-us.html">pureUXについて</a></li>
-                <li><a href="./Notice/index.htm" class="nav-notice">重要なお知らせ</a></li>
-                <li><a href="./support/index.html" class="nav-support">サポート</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-                <li><a href="./sitemap.html">さいとまっぷ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="create">
-            <h2>Check Trash</h2>
-            <p>ゴミの日をスマホから。</p>
-            <p><a href="./about-application/Checktrash/about-app.html">アプリについてはこちらから</a></p>
-        </section>
-        <section id="team-betaprogram">
-            <h2>Beta Program登録</h2>
-            <p>Check Trashのベータ版に参加して、最新機能をいち早く体験し、フィードバックを提供してください。<br><b class="red-b">このバージョンにはバグが含まれる場合があります。</b>このサイトの下にあります、フィードバックを送信するというリンクからフィードバックをお願いします。</p>
-            <ul>
-                <li>登録方法: 特になし（Android版はGithubから、iOS版はTest Flightからインストールできます。）</li>
-                <li>参加条件: 特になし。どなたでもご参加いただけます。</li>
-                <li>フィードバック方法: アプリ内のフィードバックフォームから、または<a href="#feedback">こちら</a>から送信してください。</li>
-            </ul>
-        </section>
-        <div class="feedback" id="feedback">
-            <h2>フィードバック</h2>
-            <p>アプリの使用感、バグの発見や改善点についてのフィードバックをお待ちしています。<br>以下のリンクからフィードバックフォームにアクセスしてください。</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" class="feedback-link" target="_blank" rel="noopener">フィードバックフォームへ（Googleフォーム）</a>またはアプリのフィードバックフォームから送信してください。
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="logo" href="./">pureUX</a>
+            <nav class="nav" aria-label="グローバルナビゲーション">
+                <a href="./pages/app/index.html">アプリ詳細</a>
+                <a href="./pages/team/index.html">チーム</a>
+                <a href="./pages/dev/index.html">Developer</a>
+                <a href="./pages/business/index.html">行政・企業向け</a>
+                <a href="./pages/support/index.html">サポート</a>
+                <a href="./pages/roadmap/index.html">ロードマップ</a>
+                <a href="./sitemap.html">サイトマップ</a>
+            </nav>
         </div>
-        <section id="download">
-            <h2>ダウンロード</h2>
-            <p><a href="./ja/download/index.html" class="download-bt">こちらからダウンロードできます。</a><br>開発中</p>
-            <p><span>2026年4月正式リリース予定（Android版）</span></p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <h1>Check Trash</h1>
+                <p>いつでもどこでも、ごみの日を見逃さない。高校生チーム pureUX が作る、地域密着型のごみ分別通知アプリです。</p>
+                <a class="btn btn-primary" href="./pages/download/index.html">ダウンロード</a>
+            </div>
+            <figure class="hero-preview">
+                <img src="./image/index-checktrashv1.webp" alt="Check Trash v1 のアプリ画面">
+            </figure>
+        </div>
+    </section>
+
+    <main>
+        <section class="container" id="features">
+            <h2 class="section-title">主な特徴</h2>
+            <p class="section-desc">必要な情報へすぐ届く、軽くて分かりやすい体験を重視しています。</p>
+            <div class="grid grid-3">
+                <article class="card">
+                    <h3>通知で忘れない</h3>
+                    <p>ごみ出し日前に通知。日々の生活で忘れがちな分別日を自然にサポートします。</p>
+                </article>
+                <article class="card">
+                    <h3>オフラインでも確認</h3>
+                    <p>通信が不安定でも使える設計。必要な情報を端末内で確認できます。</p>
+                </article>
+                <article class="card">
+                    <h3>プライバシー重視</h3>
+                    <p>個人情報保護を意識した構成で、安心して利用しやすい設計を目指しています。</p>
+                </article>
+            </div>
+
+            <div class="app-shot-wrap">
+                <img class="app-shot" src="./image/index-checktrashv1.webp" alt="Check Trash v1 のアプリ画面">
+                <p class="app-shot-caption">Check Trash v1 の画面イメージです。実際の操作感に近いUIで、日々のごみ出し確認をシンプルに行えます。</p>
+            </div>
         </section>
-        <section id="contact">
-            <h2>お問い合わせ</h2>
-            <p>ご質問・ご要望は<a href="mailto:info@pureux.jp">info@pureux.jp</a>までご連絡ください。</p>
+
+        <section class="container" id="areas">
+            <h2 class="section-title">対応市町村</h2>
+            <p class="section-desc">現在は茨城県内 7 市町村に対応しています。</p>
+            <div class="city-list">
+                <div class="city">土浦市</div>
+                <div class="city">つくば市</div>
+                <div class="city">水戸市</div>
+                <div class="city">東海村</div>
+                <div class="city">かすみがうら市</div>
+                <div class="city">阿見町</div>
+                <div class="city">行方市</div>
+            </div>
+            <p style="margin-top: 14px;"><a href="./pages/municipalities/index.html">対応地域の詳細を見る</a></p>
+        </section>
+
+        <section class="container" id="status">
+            <h2 class="section-title">開発状況</h2>
+            <p class="section-desc">2026年4月に v1 と Google Play 配信を予定しています。</p>
+            <div class="cta-box">
+                <p style="margin: 0 0 8px 0; font-weight: 700;">v1 正式リリース予定: 2026年4月</p>
+                <p style="margin: 0 0 12px 0; opacity: .95;">iOS / iPadOS は時期未定です。今後の更新はロードマップと公式 X で告知します。</p>
+                <a class="btn btn-primary" href="./pages/roadmap/index.html">ロードマップを見る</a>
+            </div>
+        </section>
+
+        <section class="container" id="contact">
+            <h2 class="section-title">お問い合わせ</h2>
+            <p class="section-desc">質問・連携相談はメールまたは公式 X で受け付けています。</p>
+            <p style="margin-top: 14px; color: #687083;">メール: <a href="mailto:info@pureux.jp">info@pureux.jp</a></p>
+            <p style="margin-top: 4px; color: #687083;">X: <a href="https://x.com/pureux_dev" target="_blank" rel="noopener">@pureux_dev</a></p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 pureUX Team. All rights reserved.</p>
-        <p>画像の提供元：sioyakitori</p>
-        <a href="https://x.com/pureux_dev?s=21">公式X</a>
+
+    <footer class="footer">
+        <p>&copy; 2026 pureUX Team. All rights reserved.</p>
+        <p>画像の提供元: sioyakitori</p>
     </footer>
 </body>
 </html>

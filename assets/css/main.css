@@ -1,0 +1,249 @@
+:root {
+    --bg: #ffffff;
+    --bg-soft: #f6f8fb;
+    --text: #1f2430;
+    --muted: #687083;
+    --line: #e7ebf2;
+    --brand: #2f6fed;
+    --brand-2: #27b07d;
+    --hero-a: #5f72ff;
+    --hero-b: #8b5cf6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+}
+
+a {
+    color: inherit;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.nav-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.nav a:hover {
+    color: var(--brand);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--hero-a), var(--hero-b));
+    color: #fff;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 88px 20px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    letter-spacing: -0.03em;
+}
+
+.hero p {
+    margin-top: 14px;
+    margin-bottom: 28px;
+    max-width: 700px;
+    font-size: 1.08rem;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #2d2d2d;
+}
+
+.hero-preview {
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(4px);
+}
+
+.hero-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+
+.section-title {
+    margin: 0 0 10px 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.7rem;
+}
+
+.section-desc {
+    margin: 0;
+    color: var(--muted);
+}
+
+.grid {
+    margin-top: 24px;
+    display: grid;
+    gap: 16px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.city-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.city {
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+.cta-box {
+    margin-top: 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2f6fed, #34a3dd);
+    color: #fff;
+    padding: 24px;
+}
+
+.app-shot-wrap {
+    margin-top: 24px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(20, 30, 60, 0.08);
+}
+
+.app-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.app-shot-caption {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .city-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

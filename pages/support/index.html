@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サポート | Check Trash</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/page.css">
+    <style>
+        .support-container { margin-top: 14px; }
+        .search-box { margin-bottom: 12px; }
+        .search-input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+        .category-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .category-btn { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+        .category-btn.active { background: #2f6fed; color: #fff; border-color: #2f6fed; }
+        .faq-list { display: grid; gap: 10px; }
+        .faq-item { border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+        .faq-item.hidden { display: none; }
+        .faq-category { display: inline-block; font-size: .78rem; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; margin-bottom: 8px; }
+        .faq-question { font-weight: 700; margin-bottom: 8px; }
+        .faq-answer { color: var(--muted); line-height: 1.7; }
+        .no-results { display: none; color: var(--muted); }
+        .no-results.show { display: block; }
+        .results-count { color: var(--muted); font-size: .9rem; margin: 6px 0 10px; }
+    </style>
+    <script src="../../js/support.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-wrap">
+        <a class="logo" href="../../index.html">Check Trash</a>
+        <nav class="nav">
+            <a href="../app/index.html">アプリ</a>
+            <a href="../team/index.html">チーム</a>
+            <a href="../roadmap/index.html">ロードマップ</a>
+        </nav>
+    </div>
+</header>
+<main class="page-wrap">
+    <section class="page-hero">
+        <h1>サポート</h1>
+        <p>FAQ 検索で自己解決しやすいサポートページです。</p>
+    </section>
+
+    <section class="block support-container" id="support">
+        <h2>よくある質問</h2>
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="質問を検索...">
+        </div>
+        <div class="category-filters" id="categoryFilters">
+            <button class="category-btn active" data-category="all">すべて</button>
+            <button class="category-btn" data-category="app">アプリ</button>
+            <button class="category-btn" data-category="account">アカウント</button>
+            <button class="category-btn" data-category="troubleshooting">トラブル</button>
+            <button class="category-btn" data-category="subscription">サブスク</button>
+            <button class="category-btn" data-category="other">その他</button>
+        </div>
+        <div class="results-count" id="resultsCount"></div>
+        <div class="no-results" id="noResults">検索結果が見つかりませんでした。</div>
+        <div class="faq-list" id="faqList"></div>
+    </section>
+
+    <section class="block" id="contact">
+        <h2>お問い合わせ</h2>
+        <p>メール: <a href="mailto:info@pureux.jp">info@pureux.jp</a></p>
+        <p>X: <a href="https://x.com/pureux_dev" target="_blank" rel="noopener">@pureux_dev</a></p>
+    </section>
+</main>
+<footer class="footer"><p>&copy; 2026 pureUX Team. All rights reserved.</p></footer>
+</body>
+</html>
