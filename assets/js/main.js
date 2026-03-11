@@ -8,4 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
             target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     });
+
+    const heroLead = document.getElementById("hero-lead");
+    if (heroLead) {
+        heroLead.style.visibility = "hidden";
+        setTimeout(function () {
+            heroLead.style.visibility = "visible";
+            heroLead.classList.add("animate__animated", "animate__slideInDown");
+        }, 1000);
+    }
 });
