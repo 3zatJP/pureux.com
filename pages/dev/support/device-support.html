@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デバイス・バージョンサポート | Check Trash</title>
+    <meta name="description" content="Check Trash のデバイス対応状況とアプリバージョンサポート期間を案内するページです。">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/page.css">
+    <style>
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .meta-badge {
+            border: 1px solid var(--line);
+            background: var(--bg-soft);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .support-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .support-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 620px;
+        }
+
+        .support-table th,
+        .support-table td {
+            border-bottom: 1px solid var(--line);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .support-table th {
+            background: var(--bg-soft);
+            font-size: 0.92rem;
+        }
+
+        .support-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status {
+            display: inline-block;
+            border-radius: 999px;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .status-supported {
+            color: #0f6a43;
+            background: #d8f3e8;
+        }
+
+        .status-limited {
+            color: #7a4f01;
+            background: #ffefcc;
+        }
+
+        .status-ended {
+            color: #8a1f1f;
+            background: #ffdede;
+        }
+
+        .note-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .note-list li {
+            line-height: 1.8;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-wrap">
+        <a class="logo" href="../../../index.html">Check Trash</a>
+        <nav class="nav">
+            <a href="../../app/index.html">アプリ</a>
+            <a href="../../support/index.html">サポート</a>
+            <a href="../../dev/index.html">開発者向け</a>
+            <a href="../../roadmap/index.html">ロードマップ</a>
+        </nav>
+    </div>
+</header>
+
+<main class="page-wrap">
+    <section class="page-hero">
+        <h1>デバイス・バージョンサポート</h1>
+        <p>現在サポート対象のOS・端末条件と、アプリバージョンの対応範囲を案内します。</p>
+        <div class="meta-row">
+            <span class="meta-badge">最終更新: 2026-03-29</span>
+            <span class="meta-badge">次回見直し予定: 2026-04-31</span>
+        </div>
+    </section>
+
+    <section class="block">
+        <h2>1.Check Trashサポートデバイス</h2>
+        <div class="support-table-wrap">
+            <table class="support-table" aria-label="Check Trashサポートデバイス">
+                <thead>
+                    <tr>
+                        <th>プラットフォーム</th>
+                        <th>サポート条件</th>
+                        <th>ステータス</th>
+                        <th>補足</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Android</td>
+                        <td>Android 13以降</td>
+                        <td><span class="status status-supported">サポート中</span></td>
+                        <td>主要機能を継続提供。端末仕様により一部表示差異が発生する場合があります。</td>
+                    </tr>
+                    <tr>
+                        <td>Android</td>
+                        <td>Android 10以降 Android 12以前</td>
+                        <td><span class="status status-limited">サポートの最低要件見直し中</span></td>
+                        <td>主要機能を継続提供中。端末仕様（ディスプレイの大きさ等）により一部差異が発生する場合があります。今後のアップデートで非対応となる場合があります。</td>
+                    </tr>
+                    <tr>
+                        <td>iOS</td>
+                        <td>iOS</td>
+                        <td><span class="status status-supported">非サポート</span></td>
+                        <td>現状、Android版のみの提供となっています</td>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="block">
+        <h2>2. アプリバージョンサポート状況</h2>
+        <div class="support-table-wrap">
+            <table class="support-table" aria-label="アプリバージョンサポート一覧">
+                <thead>
+                    <tr>
+                        <th>区分</th>
+                        <th>対象バージョン</th>
+                        <th>ステータス</th>
+                        <th>補足</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>最新版</td>
+                        <td>v1.0.0b.5</td>
+                        <td><span class="status status-supported">対応</span></td>
+                        <td>2026年度のデータすべてを利用できます。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="block">
+        <h2>3. 運用ポリシー</h2>
+        <ul class="note-list">
+            <li>サポート対象は、利用状況と不具合傾向を踏まえて定期的に見直します。</li>
+            <li>重大な脆弱性・障害が確認された場合は、対象バージョンを緊急更新する場合があります。</li>
+            <li>サポート終了予定は、終了日の30日前を目安に告知します。</li>
+        </ul>
+    </section>
+    <section class="block">
+        <h2>4. Android 10以降、Android 12以前のデバイスについて</h2>
+        <p>上の表の通り、これらのデバイスは、Google・AOSP（Android Open Source Project）によるセキュリティサポートが終了していることや、Androidの仕様でプライバシーに関する設定の変更がAndroid 12以前とAndroid 13以降では行われているため、セキュリティとプライバシーの観点からサポートを終了する可能性があります</p>
+    </section>
+    <section class="block">
+        <h2>5. 関連ページ</h2>
+        <p><a href="../../support/index.html">サポートトップへ</a></p>
+        <p><a href="../../download/index.html">最新バージョンをダウンロード</a></p>
+        <p><a href="../../../dev/android-changelog.html">Androidチェンジログを確認</a></p>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 pureUX Team. All rights reserved.</p>
+</footer>
+</body>
+</html>
