@@ -2,7 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // FAQデータ
-    // 画像を追加する場合は、imageプロパティに画像のパスを指定してください
     // 例: image: '../image/example.png'
     const faqData = [
         {
@@ -13,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             category: 'app',
-            question: 'Check Trashとはどのようなアプリですか？',
-            answer: 'Check Trash は高校生による開発チーム pureUX が開発した、ゴミ分別通知アプリです。プッシュ通知機能でゴミ出しの日を忘れることなく、環境に優しいゴミ分別生活をサポートします。',
+            question: 'アプリがアプリストアで見つからない',
+            answer: '現在のバージョンであるv1は ARM64bit Android 10以降のデバイスでインストール・動作するように設計されています。<br>それ以外のOS（iPhone）やそれ以前のOSでは利用できません。',
             image: null
         },
         {
@@ -44,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             category: 'app',
             question: '今後、対応地域は広がりますか？',
-            answer: 'はい、Check Trash は茨城県内のより多くの地域でのサービス提供を目指しています。あなたの地域への対応についてのご要望は、<a href="mailto:info@pureux.jp">info@pureux.jp</a> までお気軽にお問い合わせください。',
-            image: null
+            answer: 'はい、Check Trash は茨城県内のより多くの地域でのサービス提供を目指しています。',
         },
         {
             category: 'app',
@@ -97,21 +95,15 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             category: 'other',
-            question: 'バグを報告する方法は？',
-            answer: 'アプリ内のフィードバックフォーム、または<a href="https://docs.google.com/forms/d/e/1FAIpQLSfNUyHpEPHh3ZoYpSL0QeZuDzrCmWdOmchNbwl-8b0fFmDAMg/viewform?usp=header" target="_blank" rel="noopener">こちらのフォーム</a>から報告できます。',
-            image: null
-        },
-        {
-            category: 'other',
             question: '機能のリクエストはできますか？',
             answer: 'はい、フィードバックフォームから機能のリクエストをお送りいただけます。開発チームで検討させていただきます。',
             image: null
         },
         {
-            category:'app',
-            question:'アプリがアプリストアで見つからない',
-            question:'現在のバージョンであるv1は ARM64bit Android 10以降のデバイスでインストール・動作するように設計されています。<br>それ以外のOS（iPhone）やそれ以前のOSでは利用できません',
-            image:null
+            category: 'app',
+            question: 'アプリがアプリストアで見つからない',
+            answer: '現在のバージョンであるv1は ARM64bit Android 10以降のデバイスでインストール・動作するように設計されています。<br>それ以外のOS（iPhone）やそれ以前のOSでは利用できません。',
+            image: null
         }
         ];
 
