@@ -21,3 +21,8 @@ jobs:
           server-dir: /www/pureux/
           dangerous-clean-slate: false
           dry-run: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
